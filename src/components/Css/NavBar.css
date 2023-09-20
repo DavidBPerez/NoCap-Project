@@ -1,0 +1,47 @@
+/*Color Variables*/
+:root{
+  --neonPink: #FB48C4;
+  --electricBlue: #0892D0;
+}
+
+#nav-bar-container{
+  /*Color Properties*/
+  background-color: black;
+
+  /*Flex Properties*/
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+
+  max-height: 10vh;
+  max-width: 100%;
+}
+
+a{
+  color: white;
+  font-size: 1.5rem;
+}
+
+.hyper-link{
+  align-self: center;
+}
+
+#nav-bar-container img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#logo-container, #other-option-container{
+  display: flex;
+  flex-direction: row;
+}
+
+#logo-container{
+  justify-content: flex-start;
+}
+
+#other-option-container{
+  justify-content: flex-end;
+}
