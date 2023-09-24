@@ -1,12 +1,11 @@
 import {Route, Routes} from 'react-router-dom'
 
-import NavBar from "./components/NavBar.jsx"
-
-const temp = [{link: "/", text: "hi"}];
+import Homepage from "./views/Homepage"
 
 const routes = (
   <Routes>
-    <Route path='/' element={<NavBar items={temp}/>}></Route>
+    <Route path='/' element={<Homepage/>}></Route>
+    <Route path='/about' element={<div>About page</div>}></Route>
   </Routes>
 );
 
