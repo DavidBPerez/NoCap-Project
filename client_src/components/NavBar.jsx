@@ -36,11 +36,11 @@ export default function NavBar(props){
   // The image logo that is "No-Cap"
   const imgLogo = (
     <Link to="/">
-      <img id='logo-image' src="./no_cap.jfif" alt="our logo"/>
+      <img id='logo-image' src="./img/no_cap.jfif" alt="our logo"/>
     </Link>
   )
 
-
+  
   return(
     <div id='nav-bar-container'>
       <div id='logo-container'>
