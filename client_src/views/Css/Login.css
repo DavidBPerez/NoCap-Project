@@ -1,0 +1,15 @@
+body::-webkit-scrollbar {
+    display: none;
+}
+
+#login-container{
+  background-color: #C0C0C0;
+}
+
+#desc-title{
+  background-color: #C0C0C0;
+}
+
+#login-page{
+  background: linear-gradient(to bottom right, #e6e9f0, #eef2f7);
+}

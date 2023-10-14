@@ -1,13 +1,11 @@
-/** 
-* This is a react component that acts as a navBar for our project
-* It will take later specified parameters and create the navBar based on them
-* The left element of the NavBar will always be an image that will go back to the homepage when clicked
-*/
+import React from 'react';
+import { Link } from 'react-router-dom';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
+import Avatar from '@mui/material/Avatar';
 
-import {CardGroup, Card, CardImg, CardBody, CardTitle} from 'reactstrap'
-import {Link} from 'react-router-dom'
-
-/** 
+/**
 * Renders a Navigation Bar for our project
 * @param {Object} props.navOptions - An array of the objects each containing the following:
 *   - pagePath: The route the page will go when clicked
@@ -16,39 +14,33 @@ import {Link} from 'react-router-dom'
 * @returns {JSX.Element}: A react component that functions as a navBar
 */
 
-export default function NavBar(props){
+export default function NavBar(props) {
   const NavBarOptions = props.navOptions;
-  const NavElements = NavBarOptions.map((element, index) => {
-    return (
-      <Link to={element.pagePath} key={index}>
-        <Card>
-          <CardImg src={element.imgPath} alt={element.imgDesc} />
-          <CardBody>
-            <CardTitle>{element.imgDesc}</CardTitle>
-          </CardBody>
-        </Card>
-      </Link>
-    );
-  });
 
-
-
-  // The image logo that is "No-Cap"
-  const imgLogo = (
+  //rendering the homelink
+  const homeLink = (
     <Link to="/">
-      <img id='logo-image' src="./img/no_cap.jfif" alt="our logo"/>
+      <IconButton edge="start">
+        <Avatar src="./img/no_cap.jfif" alt="Home" />
+      </IconButton>
     </Link>
-  )
+  );
 
-  
-  return(
-    <div id='nav-bar-container'>
-      <div id='logo-container'>
-          {imgLogo}
-      </div>
-      <CardGroup id='other-option-container'>
-          {NavElements}
-      </CardGroup>
-    </div>  
-  )
+  //rendering dynamic links
+  const NavElements = NavBarOptions.map((element, index) => (
+    <Link key={index} to={element.pagePath}>
+      <IconButton edge="end">
+        <Avatar src={element.imgPath} alt={element.imgDesc} />
+      </IconButton>
+    </Link>
+  ));
+
+  return (
+    <AppBar position="sticky" className="bg-dark">
+      <Toolbar className="d-flex justify-content-between">
+        {homeLink}
+        {NavElements}
+      </Toolbar>
+    </AppBar>
+  );
 }
