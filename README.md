@@ -1,17 +1,9 @@
-## Running React on Repl.it
+# To build the app
+  - React: must run "npm run build"
+    * This will create the "dist" directory where the static react file are
+    * RUN THIS COMMAND WHENEVER CHANGES ARE MADE TO THE REACT CODE
+  - Node: must run "npm run server"
+    * This will run the express code which is pointed to the dist directory (as referenced in the "React" section above)
 
-[React](https://reactjs.org/) is a popular JavaScript library for building user interfaces.
-
-[Vite](https://vitejs.dev/) is a blazing fast frontend build tool that includes features like Hot Module Reloading (HMR), optimized builds, and TypeScript support out of the box.
-
-Using the two in conjunction is one of the fastest ways to build a web app.
-
-### Getting Started
-- Hit run
-- Edit [App.jsx](#src/App.jsx) and watch it live update!
-
-By default, Replit runs the `dev` script, but you can configure it by changing the `run` field in the [configuration file](#.replit). Here are the vite docs for [serving production websites](https://vitejs.dev/guide/build.html)
-
-### Typescript
-
-Just rename any file from `.jsx` to `.tsx`. You can also try our [TypeScript Template](https://replit.com/@replit/React-TypeScript)
+# Run.sh command builds react app and has react serve it
+- run bash run.sh

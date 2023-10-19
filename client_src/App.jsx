@@ -1,48 +1,43 @@
-import {BrowserRouter} from 'react-router-dom'
-import {RecoilRoot} from 'recoil'
-import {useState, useEffect} from 'react';
-import {io} from 'socket.io-client';
+import { BrowserRouter } from 'react-router-dom';
+import { RecoilRoot } from 'recoil';
+import { useEffect } from 'react';
+import { socket, connectToServer } from './controllers/SocketController.jsx';
 
-import './App.css'
-import ProjectRouter from "./ProjectRouter.jsx"
-import UIController from './controllers/UIController.jsx'
+import ProjectRouter from './ProjectRouter.jsx';
+import './App.css';
+import UIController from './controllers/UIController.jsx';
 
 export default function App() {
-  const [socket, setSocket] = useState(null);
-
-  useEffect(() => {
-    const serverURL = `http://localhost:5173`;
-    const newSocket = io(serverURL);
-    setSocket(newSocket);
-    
-    return() => {
-      newSocket.disconnect();
-    };
-  }, []);
-
   const startApplication = () => {
-    if(socket) {
-      socket.emit('start-application');
-      console.log('{Attempted to Start Application}');
-    }
+    socket.emit('start-application', (response) => {
+      console.log('Start Application Response:', response);
+    });
   };
   
   const exitApplication = () => {
-    if(socket) {
-      socket.emit('exit-application');
-      console.log('{Attempted to Exit Application}');
-    }
+    socket.emit('exit-application', (response) => {
+      console.log('Exit Application Response:', response);
+    });
   };
   
-  return(
+  useEffect(() => {
+    connectToServer();
+    
+    return () => {
+      socket.disconnect();
+      console.log('Socket Closed');
+    };
+  }, []);
+  
+  return (
     <RecoilRoot>
       <BrowserRouter>
-        <ProjectRouter/>
+        <ProjectRouter />
         <UIController
           startApplication={startApplication}
           exitApplication={exitApplication}
         />
       </BrowserRouter>
     </RecoilRoot>
-  )
+  );
 }

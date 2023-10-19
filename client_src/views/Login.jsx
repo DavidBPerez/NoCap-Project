@@ -55,9 +55,9 @@ export default function LoginPage(){
         navigate("/character_creation")
       }}
     >
-     <Form id="login-container" layout="vertical" className="container mt-5">
+     <Form id="login-container" layout="vertical" className="container my-5">
        <div id="desc-title" className="text-center">
-        <h1 className="display-5">Complacara Conundrum™ Login: </h1>
+        <h1 className="display-5">Complacara Conundrum™ Initialization: </h1>
         <p>
           To begin the game, we will need some information about you
         </p>
@@ -112,6 +112,7 @@ export default function LoginPage(){
     <div className="container-fluid min-vh-100" id="login-page">
       <NavBar navOptions={homeBarItems}/>
       {loginForm}
+      <footer style={{height: "12.5vh"}} className="bg-dark"></footer>
     </div>
   );
 }
