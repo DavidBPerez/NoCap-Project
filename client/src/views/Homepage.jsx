@@ -7,7 +7,7 @@ import PhoneIcon from '@mui/icons-material/Phone';
 import PrivacyTipIcon from '@mui/icons-material/PrivacyTip';
 
 //Home Nav Bar Displayed Elements
-const homeBarItems = [{pagePath: "/about", imgDesc: "About Page", imgPath: "./img/information.png"}]
+const homeBarItems = [{pagePath: "/about", imgDesc: "About Page", imgPath: "../../public/img/information.png"}]
 
 function HomePageFooter() {
   return (

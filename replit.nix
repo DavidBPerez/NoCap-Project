@@ -1,5 +1,7 @@
 { pkgs }: {
 	deps = [
+   pkgs.mlocate
+   pkgs.run
    pkgs.busybox
 		pkgs.nodejs-18_x
 		pkgs.nodePackages.typescript-language-server

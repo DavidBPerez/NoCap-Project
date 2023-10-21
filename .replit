@@ -1,5 +1,5 @@
 run = "npm run dev"
-entrypoint = "src/App.jsx"
+entrypoint = "client/src/App.jsx"
 
 hidden = [".config", "tsconfig.json", "tsconfig.node.json", "vite.config.js", ".gitignore"]
 
@@ -30,4 +30,4 @@ language = "nodejs"
 [deployment]
 deploymentTarget = "static"
 build = ["sh", "-c", "npm run build"]
-publicDir = "dist"
+publicDir = "dir"

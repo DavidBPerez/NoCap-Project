@@ -7,4 +7,6 @@ Ethan Peeler, basic character creation, 1hrs
 Ethan Peeler, mui integration (homepage and about page), 1.5hrs
 David Berthod-Perez, client/server integration & control refactor, 4.5hrs
 David Berthod-Perez, ineffective client/server troubleshoot (potential react conflict), 1.5hrs
-Ethan Peeler, Character Creation Login, 3.5 hours
+Ethan Peeler, Character Creation Login, 3.5hrs
+David Berthod-Perez, refactoring/seperating && repackaging client from server along with file re-structure && rebuilding launch operations && added dependencies + new bash shortcuts (see README) && more troubleshooting (still wip), 7.5hrs
+David Berthod-Perez, more connection troubleshooting, 5hrs

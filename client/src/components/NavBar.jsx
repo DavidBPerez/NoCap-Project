@@ -21,7 +21,7 @@ export default function NavBar(props) {
   const homeLink = (
     <Link to="/">
       <IconButton edge="start">
-        <Avatar src="./img/no_cap.jfif" alt="Home" />
+        <Avatar src="../public/img/no_cap.jfif" alt="Home" />
       </IconButton>
     </Link>
   );
