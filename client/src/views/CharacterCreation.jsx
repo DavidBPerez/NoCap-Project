@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react';
-import NavBar from "../components/NavBar";
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 import { Grid } from "@mui/material";
 import { useRecoilState, useRecoilValue } from 'recoil';
 
-// Atom and Selector imports
+import './Css/CharacterCreation.css';
+
 import { charState, charInfoSelector } from "../atoms/CharClassState";
 import { backgroundState, backgroundInfoSelector } from "../atoms/BackgroundState";
 import { religionState, religionInfoSelector } from "../atoms/ReligionState";
@@ -22,7 +24,7 @@ function Select({ options, name, stateName }) {
   ));
 
   return (
-    <select value={val} onChange={handleChange} style={{width: "20vw", padding: "10px", borderRadius: "4px", fontSize: ".75rem"}}>
+    <select value={val} onChange={handleChange} className="custom-select">
       <option value="" disabled hidden>Select a {name}</option>
       {optionValues}
     </select>
@@ -46,38 +48,50 @@ export default function CharacterCreation() {
   };
 
   const optionsData = [
-    { title: "Character class", options: ["Seeker", "Paladin", "Bard", "Monk", "Negotiator"], name: "Class", stateName: charState },
-    { title: "Background", options: ["World Traveler", "Village Animal Keeper", "Small-town Leader", "City Peacekeeper", "Orphan"], name: "Background", stateName: backgroundState },
-    { title: "Religion", options: ["Atheism", "Cat Worship", "Emperor Worship", "Eternal Servitude", "Anxious Elixir Drinkers", "Eternal Physiological Beings"], name: "Religion", stateName: religionState },
-    { title: "Hobby", options: ["Lockpicking", "Singing", "Gaming", "Nature", "Work"], name: "Hobby", stateName: hobbyState }
+    { title: "Character class",
+      options: ["Seeker", "Paladin", "Bard", "Monk", "Negotiator"],
+      name: "Class", stateName: charState 
+    },
+    { title: "Background",
+      options: ["World Traveler", "Village Animal Keeper", "Small-town Leader", "City Peacekeeper", "Orphan"],
+      name: "Background", stateName: backgroundState 
+    },
+    { title: "Religion",
+      options: ["Atheism", "Cat Worship", "Emperor Worship", "Eternal Servitude", "Anxious Elixir Drinkers", "Eternal Physiological Beings"],
+      name: "Religion", stateName: religionState 
+    },
+    { title: "Hobby",
+     options: ["Lockpicking", "Singing", "Gaming", "Nature", "Work"],
+      name: "Hobby", stateName: hobbyState 
+    }
   ];
 
   return (
-    <div style={{backgroundColor: "#f2f2f2", borderRadius: "8px", padding: "20px"}} className="container-fluid">
-      <NavBar navOptions={[]} />
-      <h1 className="text-center my-3 pb-2">Character Creation Menu</h1>
+    <div className="character-creation-container">
+      <Header navOptions={[]} />
+      <h1 className="text-center creation-title">Character Creation Menu</h1>
       <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }} className="text-center">
-        <Grid item style={{backgroundColor: "#ffffff", marginBottom: "0px", paddingRight: "3vw"}} xs={6}>
-          <h2 style={{borderWidth: "2px", marginBottom: "20px"}} className="border-bottom border-dark">Choose Options</h2>
-          <div id="option-container" style={{marginTop: "20px"}}>
+        <Grid item className="options-grid" xs={6}>
+          <h2 className="options-title">Choose Options</h2>
+          <div className="option-container">
             {optionsData.map((item, index) => (
-              <div className="d-flex justify-content-between pb-4" key={index}>
-                <h1 style={{fontSize: "1rem"}}>{item.title}: </h1>
+              <div className="option-item" key={index}>
+                <h1 className="option-label">{item.title}: </h1>
                 <Select options={item.options} name={item.name} stateName={item.stateName} />
               </div>
             ))}
           </div>
         </Grid>
-        <Grid item style={{backgroundColor: "#343a40", color: "#ffffff", borderWidth: "2px"}} className="border-bottom border-light" xs={6}>
-          <h2 style={{borderWidth: "2px"}} className="border-bottom border-light">Description:</h2>
-          <p>{charInfo}</p>
-          <p>{backgroundInfo}</p>
-          <p>{religionInfo}</p>
-          <p>{hobbyInfo}</p>
+        <Grid item className="description-grid" xs={6}>
+          <h2 className="description-title">Description:</h2>
+          <p className="description-text">{charInfo}</p>
+          <p className="description-text">{backgroundInfo}</p>
+          <p className="description-text">{religionInfo}</p>
+          <p className="description-text">{hobbyInfo}</p>
         </Grid>
       </Grid>
-      <button type="submit" onClick={submitCharacterDataToServer}  className="btn btn-secondary my-4">Create Character</button>
-      <footer style={{height: "12.5vh"}} className="bg-dark"></footer>
+      <button type="submit" onClick={submitCharacterDataToServer} className="submit-button">Create Character</button>
+      <Footer />
     </div>
   );
 }

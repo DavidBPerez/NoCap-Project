@@ -1,6 +1,6 @@
 import { io } from 'socket.io-client';
+import serverURL from '../config.js';
 
-const serverURL = 'http://localhost:3000';
 const socket = io(serverURL);
 
 const connectToServer = () => {

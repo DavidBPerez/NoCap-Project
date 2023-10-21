@@ -1,19 +1,25 @@
-const express = require("express");
-const path = require("path");
+const http = require('http');
+const express = require('express');
+const { Server } = require('socket.io');
+const path = require('path');
 
 const app = express();
-const port = process.env.PORT || 3000;
+const server = http.createServer(app);
+const io = new Server(server);
 
 // Serve static files
 app.use(express.static(path.resolve(__dirname, '../../client/dist')));
 
-/**
-  // Handle client-side routing
-  app.get("/*", (req, res) => {
-    res.sendFile(path.join(__dirname, '../../client/public/index.html'));
-  });
-*/
+io.on('connection', (socket) => {
+  console.log('A user connected');
 
-app.listen(port, () => {
+  socket.on('disconnect', () => {
+    console.log('User disconnected');
+  });
+});
+
+const port = process.env.PORT || 3000;
+
+server.listen(port, () => {
   console.log(`Server is running on http://localhost:${port}`);
 });

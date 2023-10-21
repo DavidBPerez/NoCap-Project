@@ -1,16 +1,21 @@
+import React from 'react';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+
 import "./Css/About.css"
-import NavBar from "../components/NavBar"
 
 import { Container, Paper, Typography, Box } from '@mui/material';
 
 export default function About() {
+  const navOptions = []
+
   return (
-    <div id="about-container" style={{fontSize: "1.5rem"}}>
-      <NavBar navOptions={[]}/>
+    <div id="about-container" style={{ fontSize: "1.5rem" }}>
+      <Header navOptions={navOptions} />
 
       <Container component={Box} mt={4} mb={6}>
-        <Paper variant="outlined" style={{padding: '2rem'}}>
-          <Typography variant="h2" align="center" gutterBottom style={{fontWeight: "bold"}} className="bg-dark text-white">
+        <Paper variant="outlined" style={{ padding: '2rem' }}>
+          <Typography variant="h2" align="center" gutterBottom style={{ fontWeight: "bold" }} className="bg-dark text-white">
             The Big Five (OCEAN)
           </Typography>
 
@@ -30,6 +35,8 @@ export default function About() {
           </Box>
         </Paper>
       </Container>
+
+      <Footer />
     </div>
   );
 }
@@ -40,7 +47,7 @@ function renderFactor(title, description) {
       <Typography variant="h4" gutterBottom>
         {title}
       </Typography>
-      <Typography variant="body1" style={{borderBottom: "2px solid black", paddingBottom: '0.5rem'}}>
+      <Typography variant="body1" style={{ borderBottom: "2px solid black", paddingBottom: '0.5rem' }}>
         {description}
       </Typography>
     </Box>

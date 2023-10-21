@@ -5,21 +5,8 @@ import { socket, connectToServer } from './controllers/SocketController.jsx';
 
 import ProjectRouter from './ProjectRouter.jsx';
 import './App.css';
-import UIController from './controllers/UIController.jsx';
 
 export default function App() {
-  const startApplication = () => {
-    socket.emit('start-application', (response) => {
-      console.log('Start Application Response:', response);
-    });
-  };
-  
-  const exitApplication = () => {
-    socket.emit('exit-application', (response) => {
-      console.log('Exit Application Response:', response);
-    });
-  };
-  
   useEffect(() => {
     connectToServer();
     
@@ -33,11 +20,6 @@ export default function App() {
     <RecoilRoot>
       <BrowserRouter>
         <ProjectRouter />
-        {/*
-        <UIController
-          startApplication={startApplication}
-          exitApplication={exitApplication}
-        /> */}
       </BrowserRouter>
     </RecoilRoot>
   );
