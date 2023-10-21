@@ -1,4 +1,4 @@
-import {atom, selector} from 'recoil'
+import { atom, selector } from 'recoil'
 
 export const hobbyState = atom({
   key: "hobbyState",

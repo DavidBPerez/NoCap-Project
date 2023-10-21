@@ -5,7 +5,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 // Serve static files
-app.use(express.static(path.resolve(__dirname, '../../client/public/dist')));
+app.use(express.static(path.resolve(__dirname, '../../client/dist')));
 
 /**
   // Handle client-side routing

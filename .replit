@@ -30,4 +30,4 @@ language = "nodejs"
 [deployment]
 deploymentTarget = "static"
 build = ["sh", "-c", "npm run build"]
-publicDir = "dir"
+publicDir = "./client/public"

@@ -33,10 +33,11 @@ export default function App() {
     <RecoilRoot>
       <BrowserRouter>
         <ProjectRouter />
+        {/*
         <UIController
           startApplication={startApplication}
           exitApplication={exitApplication}
-        />
+        /> */}
       </BrowserRouter>
     </RecoilRoot>
   );

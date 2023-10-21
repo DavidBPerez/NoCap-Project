@@ -4,7 +4,7 @@ import {Formik, Form, Field, ErrorMessage} from "formik";
 import * as Yup from "yup"
 import {useNavigate} from "react-router-dom"
 
-const homeBarItems = [{pagePath: "/about", imgDesc: "About Page", imgPath: "./img/information.png"}]
+const homeBarItems = [{pagePath: "/about", imgDesc: "About Page", imgPath: "../../public/img/information.png"}]
 
 export default function LoginPage(){
 
