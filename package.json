@@ -8,7 +8,9 @@
     "build": "vite build",
     "preview": "vite preview",
     "server": "node server/src/index.cjs",
-    "client_server": "npm run build && npm run server"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "client_server": "npm run build && npm run server",
+    "client": "cd client && npm start"
   },
   "keywords": [],
   "author": "NoCap",

@@ -11,4 +11,5 @@ Ethan Peeler, Character Creation Login, 3.5hrs
 David Berthod-Perez, refactoring/seperating && repackaging client from server along with file re-structure && rebuilding launch operations && added dependencies + new bash shortcuts (see README) && more troubleshooting (still wip), 7.5hrs
 David Berthod-Perez, more connection troubleshooting, 5hrs
 Ethan Peeler, Fixed MUI import, 3hrs
-David Berthod-Perez, ui cleanup/modulation && started gamepage and server logic + some other fixes, 6hrs
+David Berthod-Perez, ui cleanup/modulization && started gamepage server logic + some other fixes, 6hrs
+David Berthod-Perez, refactoring && new component additions + game logic creation && 'started' pathway for local file pathing (future saving), 6hrs

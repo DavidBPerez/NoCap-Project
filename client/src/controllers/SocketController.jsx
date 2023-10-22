@@ -12,9 +12,11 @@ socket.on('connect', () => {
   connectToServer();
 });
 
-socket.on('connect_error', (error) => {
-  console.error('Socket connection error:', error);
-});
+/**  -- Temporarily commented out to prevent console clutter.
+  socket.on('connect_error', (error) => {
+    console.error('Socket connection error:', error);
+  });  
+*/
 
 socket.on('disconnect', () => {
   console.log('Disconnected from the server.');

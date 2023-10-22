@@ -1,74 +1,57 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Scenario from './Scenario';
 
 const Scene1 = (props) => {
-  const [personalityScores, setPersonalityScores] = useState({
-    openness: 0,
-    conscientiousness: 0,
-    extraversion: 0,
-    agreeableness: 0,
-    neuroticism: 0,
-  });
-
   const handleOptionClick = (outcome, scores) => {
-    // Update personality scores based on outcome
-    setPersonalityScores({
-      openness: personalityScores.openness + scores.openness,
-      conscientiousness: personalityScores.conscientiousness + scores.conscientiousness,
-      extraversion: personalityScores.extraversion + scores.extraversion,
-      agreeableness: personalityScores.agreeableness + scores.agreeableness,
-      neuroticism: personalityScores.neuroticism + scores.neuroticism,
-    });
-
-    // Pass updated scores the parent component
-    props.onScene1OptionClick(outcome, personalityScores);
+    console.log('Scene1 Score:', scores);
+    props.onScene1OptionClick(outcome, scores);
   };
 
   const sceneData = {
-    text: "Welcome to Scene 1. Choose an option:",
+    text: "While walking along your UWF nature trail, you somehow step into an enchanted forest! You don't know why, but you just know it's enchanted. The rustling of leaves and chirping birds surround you. A fork in the path lies ahead. Which path will you choose to begin?",
     options: [
       {
-        label: "Option A",
-        outcome: "You chose option A. Here's the outcome for Scene 1.",
-        scores: { 
-          openness: 1, 
-          conscientiousness: 0,
-          extraversion: 0,
-          agreeableness: 1,
-          neuroticism: 0 
-        },
-      },
-      {
-        label: "Option B",
-        outcome: "You chose option B. Here's the outcome for Scene 1.",
-        scores: { 
-          openness: 0, 
-          conscientiousness: 1, 
-          extraversion: 1, 
-          agreeableness: 0, 
-          neuroticism: 0 
-        },
-      },
-      {
-        label: "Option C",
-        outcome: "You chose option C. Here's the outcome for Scene 1.",
+        label: "Path of Exploration",
+        outcome: "scene2",
         scores: {
+          openness: 2,
+          conscientiousness: -1,
+          extraversion: 0,
+          agreeableness: 0,
+          neuroticism: 0,
+        },
+      },
+      {
+        label: "Path of Conviviality",
+        outcome: "scene3",
+        scores: {
+          extraversion: 2,
+          neuroticism: -1,
           openness: 0,
           conscientiousness: 0,
-          extraversion: 0, 
           agreeableness: 0,
-          neuroticism: 1 
         },
       },
       {
-        label: "Option D",
-        outcome: "You chose option D. Here's the outcome for Scene 1.",
+        label: "Path of Tradition",
+        outcome: "scene4",
         scores: {
-          openness: 1,
+          agreeableness: 2,
+          openness: -1,
+          extraversion: 0,
           conscientiousness: 0,
-          extraversion: 1,
+          neuroticism: 0,
+        },
+      },
+      {
+        label: "Path of Caution",
+        outcome: "gameOver",
+        scores: {
+          conscientiousness: 2,
+          extraversion: -1,
+          openness: 0,
           agreeableness: 0,
-          neuroticism: 0 
+          neuroticism: 0,
         },
       },
     ],

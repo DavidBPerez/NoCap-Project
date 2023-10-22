@@ -1,5 +1,5 @@
 import React from 'react';
-import GameButton from '../GameButton';
+import PickButton from './PickButton';
 
 export default function Scenario(props) {
   const { text, options, onOptionClick } = props;
@@ -9,11 +9,12 @@ export default function Scenario(props) {
       <p>{text}</p>
       <div className="options">
         {options.map((option, index) => (
-          <GameButton
-            key={index}
-            label={option.label}
-            onClick={() => onOptionClick(option.outcome)}
-          />
+          <div key={index} className="button-container">
+            <PickButton
+              label={option.label}
+              onClick={() => onOptionClick(option.outcome, option.scores)}
+            />
+          </div>
         ))}
       </div>
     </div>

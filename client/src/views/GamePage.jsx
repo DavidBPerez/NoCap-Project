@@ -1,41 +1,59 @@
-import React, { useState } from 'react';
-import { useRecoilState } from 'recoil';
-import PlayerStatsState from '../atoms/PlayerStatsState';
-import Scene1 from '../components/adventures/Scene1';
+import React from 'react';
+import { useRecoilState, useSetRecoilState } from 'recoil';
+import { gameStateState } from '../atoms/GameState';
+import PlayerStats from '../components/PlayerStats';
+import GameScene from '../components/GameScene';
+import GameMenu from '../components/GameMenu';
+import { PlayerStatsState } from '../atoms/PlayerStatsState';
+import './Css/GamePage.css';
 
 const GamePage = () => {
-  const [playerStats, setPlayerStats] = useRecoilState(PlayerStatsState);
-  const [currentScene, setCurrentScene] = useState('scene1'); // Manage current scene using state
+  const [gameState, setGameState] = useRecoilState(gameStateState);
+  const setPlayerStats = useSetRecoilState(PlayerStatsState);
 
-  // Function handler for scene transitions && updating player stats
   const handleOptionClick = (outcome, scores) => {
-    setPlayerStats({
-      ...playerStats,
-      ...scores,
-    });
+    const updatedPlayerStats = {
+      openness: gameState.playerStats.openness + scores.openness,
+      conscientiousness: gameState.playerStats.conscientiousness + scores.conscientiousness,
+      extraversion: gameState.playerStats.extraversion + scores.extraversion,
+      agreeableness: gameState.playerStats.agreeableness + scores.agreeableness,
+      neuroticism: gameState.playerStats.neuroticism + scores.neuroticism,
+    };
 
-    // Handle scene transitions based on outcome
-    if (outcome === 'nextScene') {
-      // Update current scene to next
-      setCurrentScene('nextScene'); // Implement transitions as needed
-    }
-  };
+    const updatedGameState = {
+      ...gameState,
+      playerStats: updatedPlayerStats,
+    };
 
-  // Render scenes based on current
-  const renderScene = () => {
-    switch (currentScene) {
-      case 'scene1':
-        return <Scene1 onScene1OptionClick={handleOptionClick} />;
-      // **Add other scenes as needed
-      default:
-        return <div>Game Over</div>;
+    if (outcome === 'GameOver') {
+      // Handle game over condition or scene
+    } else {
+      updatedGameState.currentScene = outcome;
     }
+
+    setGameState(updatedGameState);
+    setPlayerStats(updatedPlayerStats);
   };
 
   return (
-    <div>
-      <h1>Game Page</h1>
-      {renderScene()}
+    <div className="game-container">
+      <div className="header">
+        <h1>Adventure Game</h1>
+      </div>
+      <div className="game-content">
+        <div className="game-stats">
+          <PlayerStats />
+        </div>
+        <div className="game-scene">
+          <GameScene gameState={gameState} onOptionClick={handleOptionClick} />
+        </div>
+      </div>
+      <div className="game-menu">
+        <GameMenu />
+      </div>
+      <div className="footer">
+        <p>© 2023 Adventure Game Co.</p>
+      </div>
     </div>
   );
 };
