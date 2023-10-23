@@ -2,10 +2,14 @@ const http = require('http');
 const express = require('express');
 const { Server } = require('socket.io');
 const path = require('path');
+// const cors = require('cors'); // Import CORS middleware -- TBD
 
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server);
+
+// TBD -- Enable CORS for requests from http://localhost:3000
+// app.use(cors({ origin: 'http://localhost:3000' }));
 
 // Serve static files
 app.use(express.static(path.resolve(__dirname, '../../client/dist')));

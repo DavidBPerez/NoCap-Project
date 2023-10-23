@@ -4,10 +4,10 @@
   "type": "module",
   "description": "React TypeScript on Replit, using Vite bundler",
   "scripts": {
-    "dev": "vite --debug",
+    "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "server": "node server/src/index.cjs",
+    "server": "PORT=3000 node server/src/index.cjs",
     "test": "echo \"Error: no test specified\" && exit 1",
     "client_server": "npm run build && npm run server",
     "client": "cd client && npm start"
@@ -15,7 +15,7 @@
   "keywords": [],
   "author": "NoCap",
   "license": "ISC",
-  "proxy": "https://localhost:3000",
+  "proxy": "",
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@types/react": "^18.0.27",

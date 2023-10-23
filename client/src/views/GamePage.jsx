@@ -36,23 +36,23 @@ const GamePage = () => {
   };
 
   return (
-    <div className="game-container">
+    <div id="game-container">
       <div className="header">
-        <h1>Adventure Game</h1>
+        <h1>Complacara Conundrum</h1>
       </div>
-      <div className="game-content">
-        <div className="game-stats">
+      <div id="game-content" className="flex-col-align-center">
+        <div id="game-stats" className="text-center">
           <PlayerStats />
         </div>
-        <div className="game-scene">
+        <div id="game-scene" className="text-center">
           <GameScene gameState={gameState} onOptionClick={handleOptionClick} />
         </div>
-      </div>
-      <div className="game-menu">
-        <GameMenu />
+        <div id="game-menu">
+          <GameMenu />
+        </div>
       </div>
       <div className="footer">
-        <p>© 2023 Adventure Game Co.</p>
+        <p>© 2023 NoCap</p>
       </div>
     </div>
   );

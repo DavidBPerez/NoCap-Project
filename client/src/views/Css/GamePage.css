@@ -1,102 +1,111 @@
-.game-container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 20px;
-  background: linear-gradient(to right, #333, #555, #333);
-  z-index: 1;
-  border-top: 2px solid #222;
-}
-
-.game-container::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 20px;
-  background: linear-gradient(to right, #333, #555, #333);
-  z-index: 1;
-  border-bottom: 2px solid #222;
-}
-
-.game-container {
-  text-align: center;
+#game-container {
   margin: 0 auto;
-  padding: 20px;
+  padding: 0;
   background-color: #f5f5f5;
-  color: #333;
   font-family: 'Arial', sans-serif;
-  border-radius: 0 0 10px 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  position: relative;
   min-height: 100vh;
+  background-image: url('../../../public/img/enchanted_forest.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  overflow: hidden;
 }
 
-.game-title {
-  font-size: 32px;
-  margin-bottom: 20px;
-  color: #444;
-}
-
-.game-content {
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-
-.game-stats {
-  width: 100%;
-  max-width: 400px;
-  background-color: #eee;
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+.header {
+  background: linear-gradient(to right, #333, #555, #333);
+  padding: 5px;
+  color: #fff;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.game-scene {
-  width: 100%;
-  max-width: 600px;
-  background-color: #f8f8f8;
-  padding: 20px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-.game-menu {
-  width: 100%;
-  max-width: 400px;
-  background-color: #eee;
-  padding: 10px;
-  border-radius: 5px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  border-radius: 10px 10px 0 0;
 }
 
 .footer {
+  background: linear-gradient(to right, #333, #555, #333);
+  padding: 5px;
+  color: #fff;
   text-align: center;
-  font-size: 14px;
-  color: #666;
-  margin-top: 20px;
+  border-radius: 0 0 10px 10px;
+}
+
+.header h1 {
+  background-color: transparent;
+  padding: 5px;
+  color: #fff;
+}
+
+.footer p {
+  background-color: transparent;
+  padding: 5px;
+  color: #fff;
+  margin: 0;
+}
+
+#game-content {
+  flex-grow: 1;
+  gap: 1vh;
+  position: relative;
+  padding: 10px;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow-y: hidden;
+}
+
+#game-stats,
+#game-scene,
+#game-menu {
+  width: 100%;
+  max-width: 30vw;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  background-color: #eee;
+}
+
+#game-scene {
+  max-width: 40vw;
+  padding: 1vh;
+}
+
+.flex-col-align-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 @media (max-width: 800px) {
-  .game-container {
-    max-width: 100%;
+  .header, .footer {
+    padding: 5px;
   }
 
-  .game-stats, .game-scene, .game-menu {
+  .header h1 {
+    padding: 5px;
+  }
+
+  .footer p {
+    padding: 5px;
+  }
+
+  #game-content {
+    gap: 1vh;
+    padding: 5px;
+  }
+
+  #game-stats,
+  #game-scene,
+  #game-menu {
+    width: 100%;
     max-width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    background-color: #eee;
+  }
+
+  #game-scene {
+    max-width: 100%;
+    padding: 1vh;
   }
 }

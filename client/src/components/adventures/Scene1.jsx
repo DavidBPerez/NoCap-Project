@@ -29,7 +29,7 @@ const Scene1 = (props) => {
           neuroticism: -1,
           openness: 0,
           conscientiousness: 0,
-          agreeableness: 0,
+          agreeableness: 2,
         },
       },
       {
@@ -49,7 +49,7 @@ const Scene1 = (props) => {
         scores: {
           conscientiousness: 2,
           extraversion: -1,
-          openness: 0,
+          openness: -1,
           agreeableness: 0,
           neuroticism: 0,
         },
