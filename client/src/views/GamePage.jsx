@@ -36,18 +36,22 @@ const GamePage = () => {
   };
 
   return (
-    <div id="game-container">
+    <div id="game-container" className="d-flex flex-column">
       <div className="header">
         <h1>Complacara Conundrum</h1>
       </div>
-      <div id="game-content" className="flex-col-align-center">
-        <div id="game-stats" className="text-center">
-          <PlayerStats />
+      <div id="game-content" className="flex-col-align-center m-0">
+        <div id="main-content">
+          <div id="game-stats" className="text-center">
+            <PlayerStats />
+          </div>
+          <div className="fancy-border"/>
+          <div id="game-scene" className="text-center">
+            <GameScene gameState={gameState} onOptionClick={handleOptionClick} />
+          </div>
+          <div className="fancy-border"/>
         </div>
-        <div id="game-scene" className="text-center">
-          <GameScene gameState={gameState} onOptionClick={handleOptionClick} />
-        </div>
-        <div id="game-menu">
+        <div id="game-menu" className="d-flex flex-row justify-content-center align-items-center pb-3">
           <GameMenu />
         </div>
       </div>

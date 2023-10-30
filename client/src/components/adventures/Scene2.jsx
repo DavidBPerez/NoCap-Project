@@ -15,7 +15,7 @@ const Scene2 = (props) => {
         scores: {
           extraversion: 2,
           conscientiousness: -1,
-          extraversion: 0,
+          openness: 0,
           agreeableness: 0,
           neuroticism: 0,
         },

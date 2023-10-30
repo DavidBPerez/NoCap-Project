@@ -11,7 +11,6 @@ const PlayerStats = () => {
   const containerStyle = {
     maxWidth: '100%',
     margin: '0 auto',
-    padding: '10px', // Reduced padding for less height
   };
 
   const statStyle = {
@@ -59,9 +58,9 @@ const PlayerStats = () => {
   }
 
   return (
-    <div style={containerStyle}>
-      <h2>Player Stats</h2>
-      <div className="d-flex flex-column">
+    <div style={containerStyle} className="pt-2 mb-5">
+      <h2 className="display-4">Player Stats</h2>
+      <div className="d-flex flex-column px-5">
         <div style={statStyle}>
           <GradientSliderComponent type="Openess" value={playerStats.openness}/>
         </div>

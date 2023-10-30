@@ -15,7 +15,8 @@ const GameMenu = () => {
     const saveData = JSON.stringify(gameState);
     // Use FileController to save data to a file
     saveDataToFile('/cache-data/localSaves.json', saveData);
-    setSaveMessage('Game saved.');
+    // setSaveMessage('Game saved.');
+    window.alert("Game Saved!");
 
     // Clear the message after 1.5 seconds
     setTimeout(() => {
@@ -31,7 +32,8 @@ const GameMenu = () => {
       const loadedState = JSON.parse(loadedData);
       // Set loaded state
       setGameState(loadedState);
-      setLoadMessage('Game loaded.');
+      // setLoadMessage('Game loaded.');
+      window.alert("Game Loaded");
     } else {
       setLoadMessage('No saved game found.');
     }
@@ -55,7 +57,8 @@ const GameMenu = () => {
     };
 
     setGameState(initialGameState);
-    setRestartMessage('Game restarted.');
+    // setRestartMessage('Game restarted.');
+    window.alert("Game Restarted");
 
     // Clear the message after 1.5 seconds
     setTimeout(() => {
@@ -65,26 +68,18 @@ const GameMenu = () => {
 
   return (
     <div>
-      <h3>Game Menu</h3>
-      <ul style={{ display: 'flex', listStyleType: 'none', padding: 0 }}>
-        <li style={{ marginRight: '1rem' }}>
-          <button onClick={saveGame}>Save Game</button>
-          <p>{saveMessage}</p>
-        </li>
-        <li style={{ marginRight: '1rem' }}>
-          <button onClick={loadGame}>Load Game</button>
-          <p>{loadMessage}</p>
-        </li>
-        <li style={{ marginRight: '1rem' }}>
-          <button onClick={restartGame}>Restart Game</button>
-          <p>{restartMessage}</p>
-        </li>
-        <li>
-          <Link to="/">
-            <button>Exit Game</button>
-          </Link>
-        </li>
-      </ul>
+      <h3 className="text-center pt-3 pb-2">Game Menu</h3>
+      <div className="d-flex justify-content-center gap-2">
+        <button className="button-outline" onClick={saveGame}>Save Game</button>
+        <p>{saveMessage}</p>
+        <button className="button-outline" onClick={loadGame}>Load Game</button>
+        <p>{loadMessage}</p>
+        <button className="button-outline" onClick={restartGame}>Restart Game</button>
+        <p>{restartMessage}</p>
+        <Link to="/">
+          <button className="button-outline">Exit Game</button>
+        </Link>
+      </div>
     </div>
   );
 };
