@@ -13,3 +13,5 @@ David Berthod-Perez, more connection troubleshooting, 5hrs
 Ethan Peeler, Fixed MUI import, 3hrs
 David Berthod-Perez, ui cleanup/modulization && started gamepage server logic + some other fixes, 6hrs
 David Berthod-Perez, refactoring && new component additions + game logic creation && 'started' pathway for local file pathing (future saving), 6hrs
+Ethan Peeler, UI enchancements + run.sh changes, 4hrs
+David Berthod-Perez, Added more scenes and GameOver results scene, 2hrs

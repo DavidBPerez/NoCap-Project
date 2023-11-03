@@ -15,7 +15,7 @@ const PlayerStats = () => {
 
   const statStyle = {
     flex: '1 1 calc(33.33% - 1rem)',
-    margin: '0.2rem', // Reduced margin for less height spacing
+    margin: '0.2rem',
   };
 
   const GradientSlider = styled(Slider)(({ theme }) => ({

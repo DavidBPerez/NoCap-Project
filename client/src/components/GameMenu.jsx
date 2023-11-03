@@ -11,34 +11,26 @@ const GameMenu = () => {
   const [gameState, setGameState] = useRecoilState(gameStateState);
 
   const saveGame = () => {
-    // Logic to save game state to localSaves
     const saveData = JSON.stringify(gameState);
-    // Use FileController to save data to a file
     saveDataToFile('/cache-data/localSaves.json', saveData);
-    // setSaveMessage('Game saved.');
     window.alert("Game Saved!");
 
-    // Clear the message after 1.5 seconds
     setTimeout(() => {
       setSaveMessage('');
     }, 1500);
   };
 
   const loadGame = () => {
-    // Load game state from localSaves
     const loadedData = loadDataFromFile('/cache-data/localSaves.json');
 
     if (loadedData) {
       const loadedState = JSON.parse(loadedData);
-      // Set loaded state
       setGameState(loadedState);
-      // setLoadMessage('Game loaded.');
       window.alert("Game Loaded");
     } else {
       setLoadMessage('No saved game found.');
     }
 
-    // Clear the message after 1.5 seconds
     setTimeout(() => {
       setLoadMessage('');
     }, 1500);
@@ -57,10 +49,8 @@ const GameMenu = () => {
     };
 
     setGameState(initialGameState);
-    // setRestartMessage('Game restarted.');
     window.alert("Game Restarted");
 
-    // Clear the message after 1.5 seconds
     setTimeout(() => {
       setRestartMessage('');
     }, 1500);

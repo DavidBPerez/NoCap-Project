@@ -1,10 +1,10 @@
 import React from 'react';
-import { useRecoilState, useSetRecoilState } from 'recoil';
+import { useRecoilState, useSetRecoilState, useRecoilValue } from 'recoil';
 import { gameStateState } from '../atoms/GameState';
 import PlayerStats from '../components/PlayerStats';
+import { PlayerStatsState } from '../atoms/PlayerStatsState';
 import GameScene from '../components/GameScene';
 import GameMenu from '../components/GameMenu';
-import { PlayerStatsState } from '../atoms/PlayerStatsState';
 import './Css/GamePage.css';
 
 const GamePage = () => {
@@ -25,8 +25,8 @@ const GamePage = () => {
       playerStats: updatedPlayerStats,
     };
 
-    if (outcome === 'GameOver') {
-      // Handle game over condition or scene
+    if (outcome === 'gameOver') {
+      updatedGameState.currentScene = 'gameOver';
     } else {
       updatedGameState.currentScene = outcome;
     }
@@ -45,11 +45,11 @@ const GamePage = () => {
           <div id="game-stats" className="text-center">
             <PlayerStats />
           </div>
-          <div className="fancy-border"/>
+          <div className="fancy-border" />
           <div id="game-scene" className="text-center">
             <GameScene gameState={gameState} onOptionClick={handleOptionClick} />
           </div>
-          <div className="fancy-border"/>
+          <div className="fancy-border" />
         </div>
         <div id="game-menu" className="d-flex flex-row justify-content-center align-items-center pb-3">
           <GameMenu />

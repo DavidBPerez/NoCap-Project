@@ -22,12 +22,12 @@ const Scene4 = (props) => {
       },
       {
         label: "Turn back and explore more of a cave you saw along the way",
-        outcome: "scene14",
-        scores: { 
-          openness: 0, 
-          conscientiousness: 1, 
-          extraversion: 1, 
-          agreeableness: 0, 
+        outcome: "gameOver",
+        scores: {
+          openness: 0,
+          conscientiousness: 1,
+          extraversion: 1,
+          agreeableness: 0,
           neuroticism: 0,
         },
       },
