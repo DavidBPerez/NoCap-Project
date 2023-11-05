@@ -1,10 +1,17 @@
 import React from 'react';
 import Scenario from './Scenario';
+import { useRecoilState } from 'recoil';
+import { PlayerStatsState, updatePlayerStats } from '../../atoms/PlayerStatsState';
 
 const Scene1 = (props) => {
+  const [playerStats, setPlayerStats] = useRecoilState(PlayerStatsState);
+  
   const handleOptionClick = (outcome, scores) => {
-    console.log('Scene1 Score:', scores);
-    props.onScene1OptionClick(outcome, scores);
+    console.log('Score:', scores);
+    const updatedPlayerStats = updatePlayerStats(playerStats, scores);
+    
+    setPlayerStats(updatedPlayerStats);
+    props.onScene1OptionClick(outcome, updatedPlayerStats); 
   };
 
   const sceneData = {

@@ -8,6 +8,15 @@ export const PlayerStatsState = atom({
     extraversion: 0,
     agreeableness: 0,
     neuroticism: 0,
-    level: 1,
   },
 });
+
+export const updatePlayerStats = (currentStats, scores) => {
+  return {
+    openness: currentStats.openness + scores.openness,
+    conscientiousness: currentStats.conscientiousness + scores.conscientiousness,
+    extraversion: currentStats.extraversion + scores.extraversion,
+    agreeableness: currentStats.agreeableness + scores.agreeableness,
+    neuroticism: currentStats.neuroticism + scores.neuroticism,
+  };
+};

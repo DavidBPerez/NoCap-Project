@@ -9,16 +9,20 @@ import './Css/GamePage.css';
 
 const GamePage = () => {
   const [gameState, setGameState] = useRecoilState(gameStateState);
-  const setPlayerStats = useSetRecoilState(PlayerStatsState);
+  const playerStats = useRecoilValue(PlayerStatsState);
 
   const handleOptionClick = (outcome, scores) => {
+    console.log('Selected Scores:', scores);
+
     const updatedPlayerStats = {
-      openness: gameState.playerStats.openness + scores.openness,
-      conscientiousness: gameState.playerStats.conscientiousness + scores.conscientiousness,
-      extraversion: gameState.playerStats.extraversion + scores.extraversion,
-      agreeableness: gameState.playerStats.agreeableness + scores.agreeableness,
-      neuroticism: gameState.playerStats.neuroticism + scores.neuroticism,
+      openness: scores.openness,
+      conscientiousness: scores.conscientiousness,
+      extraversion: scores.extraversion,
+      agreeableness: scores.agreeableness,
+      neuroticism: scores.neuroticism,
     };
+
+    console.log('Updated Player Stats:', updatedPlayerStats);
 
     const updatedGameState = {
       ...gameState,
@@ -32,7 +36,6 @@ const GamePage = () => {
     }
 
     setGameState(updatedGameState);
-    setPlayerStats(updatedPlayerStats);
   };
 
   return (
@@ -47,7 +50,7 @@ const GamePage = () => {
           </div>
           <div className="fancy-border" />
           <div id="game-scene" className="text-center">
-            <GameScene gameState={gameState} onOptionClick={handleOptionClick} />
+            <GameScene onOptionClick={handleOptionClick} />
           </div>
           <div className="fancy-border" />
         </div>

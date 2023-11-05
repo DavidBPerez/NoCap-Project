@@ -62,7 +62,7 @@ const PlayerStats = () => {
       <h2 className="display-4">Player Stats</h2>
       <div className="d-flex flex-column px-5">
         <div style={statStyle}>
-          <GradientSliderComponent type="Openess" value={playerStats.openness}/>
+          <GradientSliderComponent type="Openness" value={playerStats.openness}/>
         </div>
         <div style={statStyle}>
           <GradientSliderComponent type="Conscientiousness" value={playerStats.conscientiousness}/>

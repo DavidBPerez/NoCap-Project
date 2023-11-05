@@ -9,19 +9,19 @@ const calculatePersonality = (stats) => {
 
   const personalityTraits = [];
 
-  if (openness >= 2) {
+  if (openness >= 3) {
     personalityTraits.push('OPEN-MINDED\nYou have a curious and open approach to life, embracing new experiences and ideas.');
   }
-  if (conscientiousness >= 2) {
+  if (conscientiousness >= 3) {
     personalityTraits.push('CONSCIENTIOUS\nYou are diligent and responsible, paying attention to details and staying organized.');
   }
-  if (extraversion >= 2) {
+  if (extraversion >= 3) {
     personalityTraits.push('EXTRAVERTED\nYou are outgoing and social, enjoying interactions with others and seeking new experiences.');
   }
-  if (agreeableness >= 2) {
+  if (agreeableness >= 3) {
     personalityTraits.push('AGREEABLE\nYou are kind and cooperative, valuing harmonious relationships and empathy.');
   }
-  if (neuroticism >= 2) {
+  if (neuroticism >= 3) {
     personalityTraits.push('EMOTIONALLY STABLE\nYou remain calm and composed even in challenging situations.');
   }
   if (personalityTraits.length === 0) {
