@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useRecoilState } from 'recoil';
+import { Link, useNavigate } from 'react-router-dom';
+import { useRecoilState, useRecoilValue } from 'recoil';
 import { gameStateState } from '../atoms/GameState';
+import { PlayerStatsState } from '../atoms/PlayerStatsState';
 import { saveDataToFile, loadDataFromFile } from '../controllers/FileController';
 
 const GameMenu = () => {
@@ -9,11 +10,71 @@ const GameMenu = () => {
   const [loadMessage, setLoadMessage] = useState('');
   const [restartMessage, setRestartMessage] = useState('');
   const [gameState, setGameState] = useRecoilState(gameStateState);
+  const [playerStats, setPlayerStats] = useRecoilState(PlayerStatsState);
+
+  const navigate = useNavigate();
+
+  const resetGame = () => {
+    resetCharacterData();
+    const initialGameState = {
+      currentScene: 'scene1',
+      playerStats: {
+        openness: 0,
+        conscientiousness: 0,
+        extraversion: 0,
+        agreeableness: 0,
+        neuroticism: 0,
+      },
+    };
+
+    setGameState(initialGameState);
+    window.alert("Game Restarted");
+    navigate('/character_creation');
+
+    setTimeout(() => {
+      setRestartMessage('');
+    }, 1500);
+  };
+
+  const exitGame = () => {
+    resetCharacterData();
+    const initialGameState = {
+      currentScene: 'scene1',
+      playerStats: {
+        openness: 0,
+        conscientiousness: 0,
+        extraversion: 0,
+        agreeableness: 0,
+        neuroticism: 0,
+      },
+    };
+
+    setGameState(initialGameState);
+    navigate('/');
+  };
+
+  const resetCharacterData = () => {
+    setGameState((prevGameState) => ({
+      ...prevGameState,
+      selectedClass: '',
+      selectedBackground: '',
+      selectedReligion: '',
+      selectedHobby: '',
+    }));
+
+    setPlayerStats({
+      openness: 0,
+      conscientiousness: 0,
+      extraversion: 0,
+      agreeableness: 0,
+      neuroticism: 0,
+    });
+  };
 
   const saveGame = () => {
     const saveData = JSON.stringify(gameState);
     saveDataToFile('/cache-data/localSaves.json', saveData);
-    window.alert("Game Saved!");
+    setSaveMessage('Game Saved!');
 
     setTimeout(() => {
       setSaveMessage('');
@@ -26,33 +87,14 @@ const GameMenu = () => {
     if (loadedData) {
       const loadedState = JSON.parse(loadedData);
       setGameState(loadedState);
-      window.alert("Game Loaded");
+      setPlayerStats(loadedState.playerStats);
+      setLoadMessage('Game Loaded');
     } else {
       setLoadMessage('No saved game found.');
     }
 
     setTimeout(() => {
       setLoadMessage('');
-    }, 1500);
-  };
-
-  const restartGame = () => {
-    const initialGameState = {
-      currentScene: 'scene1',
-      playerStats: {
-        openness: 0,
-        conscientiousness: 0,
-        extraversion: 0,
-        agreeableness: 0,
-        neuroticism: 0,
-      }
-    };
-
-    setGameState(initialGameState);
-    window.alert("Game Restarted");
-
-    setTimeout(() => {
-      setRestartMessage('');
     }, 1500);
   };
 
@@ -64,11 +106,9 @@ const GameMenu = () => {
         <p>{saveMessage}</p>
         <button className="button-outline" onClick={loadGame}>Load Game</button>
         <p>{loadMessage}</p>
-        <button className="button-outline" onClick={restartGame}>Restart Game</button>
+        <button className="button-outline" onClick={resetGame}>Restart Game</button>
         <p>{restartMessage}</p>
-        <Link to="/">
-          <button className="button-outline">Exit Game</button>
-        </Link>
+        <button className="button-outline" onClick={exitGame}>Exit Game</button>
       </div>
     </div>
   );

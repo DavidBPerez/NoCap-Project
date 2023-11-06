@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { Grid } from '@mui/material';
@@ -66,10 +66,10 @@ export default function CharacterCreation() {
 
   const navigate = useNavigate();
 
-  const [selectedClass, setSelectedClass] = React.useState('');
-  const [selectedBackground, setSelectedBackground] = React.useState('');
-  const [selectedReligion, setSelectedReligion] = React.useState('');
-  const [selectedHobby, setSelectedHobby] = React.useState('');
+  const [selectedClass, setSelectedClass] = useRecoilState(charState);
+  const [selectedBackground, setSelectedBackground] = useRecoilState(backgroundState);
+  const [selectedReligion, setSelectedReligion] = useRecoilState(religionState);
+  const [selectedHobby, setSelectedHobby] = useRecoilState(hobbyState);
 
   const [playerStats, setPlayerStats] = useRecoilState(PlayerStatsState);
 
@@ -121,7 +121,25 @@ export default function CharacterCreation() {
       name: 'Hobby',
       stateName: hobbyState,
     },
-  ];
+  ]
+
+  const resetCharacterData = () => {
+    setSelectedClass('');
+    setSelectedBackground('');
+    setSelectedReligion('');
+    setSelectedHobby('');
+    setPlayerStats({
+      openness: 0,
+      conscientiousness: 0,
+      extraversion: 0,
+      agreeableness: 0,
+      neuroticism: 0,
+    });
+  };
+
+  useEffect(() => {
+    resetCharacterData();
+  }, []);
 
   return (
     <div className="character-creation-container">

@@ -1,26 +1,21 @@
 import React from 'react';
-import { useRecoilState, useSetRecoilState, useRecoilValue } from 'recoil';
+import { useRecoilState, useRecoilValue } from 'recoil';
 import { gameStateState } from '../atoms/GameState';
 import PlayerStats from '../components/PlayerStats';
-import { PlayerStatsState } from '../atoms/PlayerStatsState';
+import { PlayerStatsState, updatePlayerStats } from '../atoms/PlayerStatsState'; // Import PlayerStatsState and updatePlayerStats
 import GameScene from '../components/GameScene';
 import GameMenu from '../components/GameMenu';
 import './Css/GamePage.css';
 
 const GamePage = () => {
   const [gameState, setGameState] = useRecoilState(gameStateState);
-  const playerStats = useRecoilValue(PlayerStatsState);
+  const [playerStats, setPlayerStats] = useRecoilState(PlayerStatsState); // Access PlayerStatsState
 
   const handleOptionClick = (outcome, scores) => {
     console.log('Selected Scores:', scores);
 
-    const updatedPlayerStats = {
-      openness: scores.openness,
-      conscientiousness: scores.conscientiousness,
-      extraversion: scores.extraversion,
-      agreeableness: scores.agreeableness,
-      neuroticism: scores.neuroticism,
-    };
+    // Update playerStats using the updatePlayerStats function
+    const updatedPlayerStats = updatePlayerStats(playerStats, scores);
 
     console.log('Updated Player Stats:', updatedPlayerStats);
 
