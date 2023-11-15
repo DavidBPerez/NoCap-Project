@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PickButton from './PickButton';
 
 export default function Scenario(props) {
   const { text, options, onOptionClick } = props;
+  const [selectedOptions, setSelectedOptions] = useState([]);
+
+  const handleOptionClick = (outcome, scores) => {
+    if (!selectedOptions.includes(outcome)) {
+      setSelectedOptions([...selectedOptions, outcome]);
+      onOptionClick(outcome, scores);
+    } else {
+      window.alert('This option has already been chosen. Please select a different path.');
+    }
+  };
 
   return (
     <div className="scenario">
@@ -12,7 +22,7 @@ export default function Scenario(props) {
           <div key={index} className="button-container">
             <PickButton
               label={option.label}
-              onClick={() => onOptionClick(option.outcome, option.scores)}
+              onClick={() => handleOptionClick(option.outcome, option.scores)}
             />
           </div>
         ))}

@@ -4,6 +4,7 @@ import Footer from '../components/Footer';
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";
+import {createUser, storeUserData} from "../firebase.mjs"
 
 import './Css/Login.css';
 
@@ -52,8 +53,10 @@ export default function LoginPage() {
       }}
       validationSchema={validationSchema}
       onSubmit={values => {
-        console.log(values);
-        // **POST VALUES TO SERVER
+        createUser(values.email, values.password) //TEST: REMOVE
+        storeUserData(values.username + values.age, values.email, values.username, values.age, values.gender);
+        // createUser("zzz", values.email, values.username, values.age, values.gender); //FIREBASE THROWING ERROR HERE
+        console.log(values.email);
         navigate("/character_creation");
       }}
     >
