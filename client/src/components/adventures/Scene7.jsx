@@ -15,13 +15,13 @@ const Scene7 = (props) => {
   };
 
   const sceneData = {
-    text: "You engage in a deep conversation with the villagers, learning about the village's rich history and the mysteries of the forest. What's your next move?",
+    text: "You engage in a deep conversation with the villagers, learning about the village's rich history and the mysteries of the forest. In addition, you learn about recent dragons attacks that have occured in nearby areas. What's your next move?",
     options: [
       {
         label: "Continue the conversation and ask about the forest's secrets",
         outcome: "scene12",
         scores: {
-          openness: 2,
+          openness: 3,
           conscientiousness: 0,
           extraversion: -1,
           agreeableness: 0,
@@ -30,12 +30,14 @@ const Scene7 = (props) => {
       },
       {
         label: "Share your own stories and experiences",
-        outcome: "scene6",
+        outcome: "gameOver",
+        gameOverMessage: 
+          "After sharing your stories the the villagers became confused and afraid of you, accusing you of witchcraft.\n\nBurn the witch!",
         scores: {
-          agreeableness: 2,
+          agreeableness: 4,
           conscientiousness: 0,
           extraversion: 0,
-          openness: -1,
+          openness: -2,
           neuroticism: 0,
         },
       },
@@ -43,9 +45,9 @@ const Scene7 = (props) => {
         label: "Bid farewell and explore the forest",
         outcome: "scene9",
         scores: {
-          openness: 1,
+          openness: 2,
           conscientiousness: 0,
-          extraversion: 1,
+          extraversion: 2,
           agreeableness: 0,
           neuroticism: 0,
         },
@@ -58,7 +60,7 @@ const Scene7 = (props) => {
           openness: -1,
           extraversion: -1,
           conscientiousness: 0,
-          neuroticism: 2,
+          neuroticism: 3,
         },
       },
     ],

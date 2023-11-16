@@ -30,7 +30,7 @@ const Scene10 = (props) => {
       },
       {
         label: "Turn back and return to the forest",
-        outcome: "scene9",
+        outcome: "scene12",
         scores: {
           openness: 1,
           conscientiousness: 0,
@@ -41,13 +41,15 @@ const Scene10 = (props) => {
       },
       {
         label: "Examine the cave walls and formations",
-        outcome: "scene11",
+        outcome: "gameOver",
+        gameOverMessage: 
+          "Looking closely at the walls you notice some enchanted text that becomes the last thing you read.\n\nMust've been the Green Hag.",
         scores: {
           openness: 0,
           conscientiousness: 0,
           extraversion: 0,
           agreeableness: 0,
-          neuroticism: 1,
+          neuroticism: 3,
         },
       },
       {

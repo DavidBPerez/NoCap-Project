@@ -18,7 +18,7 @@ const Scene2 = (props) => {
     text: "After traveling, you reach a quaint village. There are some villagers you mistake for other students who invite you to a grand feast! You become not only confused but also curious about the thought. What will you do?",
     options: [
       {
-        label: "Dazzling Performance",
+        label: "Perform a Dazzling Performance to amuse the villagers",
         outcome: "scene5",
         scores: {
           extraversion: 2,
@@ -29,7 +29,7 @@ const Scene2 = (props) => {
         },
       },
       {
-        label: "Helpful Contribution",
+        label: "Offer helpful contributions around town",
         outcome: "scene6",
         scores: {
           agreeableness: 2,
@@ -40,7 +40,7 @@ const Scene2 = (props) => {
         },
       },
       {
-        label: "Deep Conversation",
+        label: "Start deep conversations with the locals",
         outcome: "scene7",
         scores: {
           openness: 2,
@@ -51,7 +51,7 @@ const Scene2 = (props) => {
         },
       },
       {
-        label: "Low-Key Observance",
+        label: "Slip away for some low-key observance",
         outcome: "scene8",
         scores: {
           openness: 0,

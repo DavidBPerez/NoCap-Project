@@ -15,16 +15,18 @@ const Scene6 = (props) => {
   };
 
   const sceneData = {
-    text: "You decide to contribute by helping the villagers with their tasks. They appreciate your assistance. What would you like to do next?",
+    text: "You decide to contribute by helping the villagers with their tasks. They appreciate your assistance, and in return you gain their gratitude. What would you like to do next?",
     options: [
       {
         label: "Continue helping the villagers",
-        outcome: "scene12",
+        outcome: "gameOver",
+        gameOverMessage: 
+          "As you're helping a gust of wind sweeps the village knocking you over. A bundle of planks fall on you (oh pity).\n\nYou Felled.",
         scores: {
-          agreeableness: 2,
+          agreeableness: 4,
           conscientiousness: 0,
           extraversion: 0,
-          openness: -1,
+          openness: -2,
           neuroticism: 0,
         },
       },
@@ -43,9 +45,9 @@ const Scene6 = (props) => {
         label: "Explore the village on your own",
         outcome: "scene9",
         scores: {
-          openness: 1,
+          openness: 2,
           conscientiousness: 0,
-          extraversion: 1,
+          extraversion: 2,
           agreeableness: 0,
           neuroticism: 0,
         },
@@ -58,7 +60,7 @@ const Scene6 = (props) => {
           openness: -1,
           extraversion: -1,
           conscientiousness: 0,
-          neuroticism: 2,
+          neuroticism: 3,
         },
       },
     ],

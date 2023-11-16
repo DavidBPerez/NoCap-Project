@@ -21,9 +21,9 @@ const Scene8 = (props) => {
         label: "Continue observing the forest and surroundings",
         outcome: "scene12",
         scores: {
-          openness: 1,
+          openness: 2,
           conscientiousness: 0,
-          extraversion: 1,
+          extraversion: 2,
           agreeableness: 0,
           neuroticism: 0,
         },
@@ -40,11 +40,13 @@ const Scene8 = (props) => {
         },
       },
       {
-        label: "Head back to the village and see what's happening",
-        outcome: "scene2",
+        label: "Head back to the village plaza and see what's happening",
+        outcome: "gameOver",
+        gameOverMessage: 
+          "After resting and clearing your mind you turn back to the village center only to notice it's all missing.\n\nWas all that real?",
         scores: {
-          extraversion: 2,
-          conscientiousness: -1,
+          extraversion: 4,
+          conscientiousness: -2,
           openness: 0,
           agreeableness: 0,
           neuroticism: 0,
@@ -58,7 +60,7 @@ const Scene8 = (props) => {
           openness: -1,
           extraversion: -1,
           conscientiousness: 0,
-          neuroticism: 2,
+          neuroticism: 3,
         },
       },
     ],

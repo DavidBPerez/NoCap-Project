@@ -19,11 +19,13 @@ const Scene13 = (props) => {
     options: [
       {
         label: "Continue relaxing and embrace the tranquility",
-        outcome: "scene13",
+        outcome: "gameOver",
+        gameOverMessage: 
+          "You decide you never want to leave from where you are, letting the forest leaves engulf you.\n\nAn Adventurer's Rest.",
         scores: {
-          openness: 1,
+          openness: 3,
           conscientiousness: 0,
-          extraversion: 1,
+          extraversion: 3,
           agreeableness: 0,
           neuroticism: 0,
         },
@@ -31,9 +33,11 @@ const Scene13 = (props) => {
       {
         label: "Return to the village to see what's happening",
         outcome: "gameOver",
+        gameOverMessage: 
+          "On your way you notice smoke and fleeing villagers, but before you reach the town you get jumped by a dragon.\n\nYou are dead.",
         scores: {
-          extraversion: 2,
-          conscientiousness: -1,
+          extraversion: 4,
+          conscientiousness: -2,
           openness: 0,
           agreeableness: 0,
           neuroticism: 0,

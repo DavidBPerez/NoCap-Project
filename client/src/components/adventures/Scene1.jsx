@@ -18,7 +18,7 @@ const Scene1 = (props) => {
     text: "While walking along your UWF nature trail, you somehow step into an enchanted forest! You don't know why, but you just know it's enchanted. The rustling of leaves and chirping birds surround you. A fork in the path lies ahead. Which path will you choose to begin?",
     options: [
       {
-        label: "Path of Exploration",
+        label: "The Main Path of Exploration",
         outcome: "scene2",
         scores: {
           openness: 2,
@@ -29,7 +29,7 @@ const Scene1 = (props) => {
         },
       },
       {
-        label: "Path of Conviviality",
+        label: "The Aged Path of Conviviality",
         outcome: "scene3",
         scores: {
           extraversion: 2,
@@ -40,7 +40,7 @@ const Scene1 = (props) => {
         },
       },
       {
-        label: "Path of Tradition",
+        label: "The Stray Route of Tradition",
         outcome: "scene4",
         scores: {
           agreeableness: 2,
@@ -51,12 +51,14 @@ const Scene1 = (props) => {
         },
       },
       {
-        label: "Path of Caution",
+        label: "The Returning Path of Caution",
         outcome: "gameOver",
+        gameOverMessage: 
+          "You decided it's not worth the risks and just head home (pretty lame, but impressive you finished this early).\n\nGame Over.",
         scores: {
-          conscientiousness: 2,
-          extraversion: -1,
-          openness: -1,
+          conscientiousness: 4,
+          extraversion: -2,
+          openness: -2,
           agreeableness: 0,
           neuroticism: 0,
         },

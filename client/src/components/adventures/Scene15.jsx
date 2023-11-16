@@ -40,7 +40,7 @@ const Scene15 = (props) => {
         },
       },
       {
-        label: "Explore the surroundings of the mysterious room",
+        label: "Explore the surroundings of the building",
         outcome: "scene9",
         scores: {
           openness: 1,

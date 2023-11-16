@@ -15,36 +15,42 @@ const Scene12 = (props) => {
   };
 
   const sceneData = {
-    text: "You continue to observe your surroundings, taking in the forest's beauty. The serene atmosphere calms your mind. What would you like to do next?",
+    text: "You continue to learn more about your surroundings, taking in the forest's beauty and the village deeper within it. The serene atmosphere calms your mind, but also notice a glimpse of a distant red flying object. What would you like to do next?",
     options: [
       {
         label: "Stay in your current spot and continue observing",
-        outcome: "scene12",
+        outcome: "gameOver",
+        gameOverMessage: 
+          "Out of nowhere a bird flies past your face catching you off-guard, rendering you unconscious from falling.\n\nYour adventure pauses here.",
         scores: {
-          openness: 1,
+          openness: 3,
           conscientiousness: 0,
-          extraversion: 1,
+          extraversion: 3,
           agreeableness: 0,
           neuroticism: 0,
         },
       },
       {
         label: "Explore deeper into the forest",
-        outcome: "scene9",
+        outcome: "gameOver",
+        gameOverMessage: 
+          "You get pretty far, but far is nowhere in an endless enchanted forest.\n\nSomething might happen, eventually...",
         scores: {
-          openness: 1,
+          openness: 3,
           conscientiousness: 0,
-          extraversion: 1,
+          extraversion: 3,
           agreeableness: 0,
           neuroticism: 0,
         },
       },
       {
-        label: "Return to the village to see what's happening",
-        outcome: "scene2",
+        label: "Visit the village plaza to see what's happening",
+        outcome: "gameOver",
+        gameOverMessage: 
+          "You enter the plaza to notice chaos inflicting all around. Flames everywhere and a dragon above with no way out.\n\nYou died.",
         scores: {
-          extraversion: 2,
-          conscientiousness: -1,
+          extraversion: 4,
+          conscientiousness: -2,
           openness: 0,
           agreeableness: 0,
           neuroticism: 0,

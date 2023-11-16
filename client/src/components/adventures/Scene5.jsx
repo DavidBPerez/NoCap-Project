@@ -19,12 +19,14 @@ const Scene5 = (props) => {
     options: [
       {
         label: "Accept their invitation for a celebration",
-        outcome: "scene2",
+        outcome: "gameOver",
+        gameOverMessage: 
+          "You all go inside the townhall and party the day away. You feel rested and decided to cease your journey.\n\nThe End.",
         scores: {
-          agreeableness: 2,
+          agreeableness: 4,
           conscientiousness: 0,
           extraversion: 0,
-          openness: -1,
+          openness: -2,
           neuroticism: 0,
         },
       },
@@ -32,9 +34,9 @@ const Scene5 = (props) => {
         label: "Excuse yourself and explore the village",
         outcome: "scene9",
         scores: {
-          openness: 1,
+          openness: 2,
           conscientiousness: 0,
-          extraversion: 1,
+          extraversion: 2,
           agreeableness: 0,
           neuroticism: 0,
         },

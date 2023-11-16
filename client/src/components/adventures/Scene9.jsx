@@ -15,15 +15,17 @@ const Scene9 = (props) => {
   };
 
   const sceneData = {
-    text: "As you follow the path of colorful flowers, it leads you deeper into the forest. The enchanting ambiance continues. What's your next move?",
+    text: "As you follow a path of colorful flowers, it leads you deeper into the forest. The enchanting yet more ambiguous ambiance continues. What's your next move?",
     options: [
       {
         label: "Continue following the colorful path",
-        outcome: "scene10",
+        outcome: "gameOver",
+        gameOverMessage: 
+          "You keep going as it gets more entrancing until you find you're in too deep and succumb to the most colorful flower there.\n\nDid you feed him Seymour?",
         scores: {
           openness: 0,
-          conscientiousness: 1,
-          extraversion: 1,
+          conscientiousness: 3,
+          extraversion: 3,
           agreeableness: 0,
           neuroticism: 0,
         },
@@ -41,7 +43,7 @@ const Scene9 = (props) => {
       },
       {
         label: "Explore the dark cave entrance",
-        outcome: "gameOver",
+        outcome: "scene10",
         scores: {
           openness: 0,
           conscientiousness: 1,

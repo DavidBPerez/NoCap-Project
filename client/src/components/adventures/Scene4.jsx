@@ -15,26 +15,26 @@ const Scene4 = (props) => {
   };
 
   const sceneData = {
-    text: "The forest becomes darker as you venture further. Moonlight barely filters through the thick canopy. You come across a fork in your path, but a mysterious structure lies to the side. How will you proceed?",
+    text: "The forest becomes darker as you venture further. Moonlight barely filters through the thick canopy. You come across a fork in your path, but a mysterious structure with a door lies to the side. How will you proceed?",
     options: [
       {
         label: "Open the door and enter the unknown room",
-        outcome: "scene13",
+        outcome: "scene16",
         scores: { 
-          openness: 1, 
+          openness: 2, 
           conscientiousness: 0,
           extraversion: 0,
-          agreeableness: 1,
+          agreeableness: 2,
           neuroticism: 0,
         },
       },
       {
         label: "Turn back and explore more of a cave you saw along the way",
-        outcome: "gameOver",
+        outcome: "scene10",
         scores: {
           openness: 0,
-          conscientiousness: 1,
-          extraversion: 1,
+          conscientiousness: 2,
+          extraversion: 2,
           agreeableness: 0,
           neuroticism: 0,
         },
@@ -47,12 +47,12 @@ const Scene4 = (props) => {
           conscientiousness: 0,
           extraversion: 0, 
           agreeableness: 0,
-          neuroticism: 1,
+          neuroticism: 2,
         },
       },
       {
         label: "Sit and meditate, contemplating the choices of the road",
-        outcome: "scene16",
+        outcome: "scene8",
         scores: {
           openness: 1,
           conscientiousness: 0,

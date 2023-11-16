@@ -19,28 +19,32 @@ const Scene16 = (props) => {
     options: [
       {
         label: "Sit and meditate, contemplating the choices of the road",
-        outcome: "scene16",
+        outcome: "gameOver",
+        gameOverMessage: 
+          "As you meditate you notice an odd feeling, as if the house is moving.\n\nThe Mimic won this time.",
         scores: {
-          openness: 1,
+          openness: 3,
           conscientiousness: 0,
-          extraversion: 1,
+          extraversion: 3,
           agreeableness: 0,
           neuroticism: 0,
         },
       },
       {
         label: "Explore the surroundings of the mysterious room",
-        outcome: "scene9",
+        outcome: "gameOver",
+        gameOverMessage: 
+          "Through searching the room you notice a very organ looking piece of furniture.\n\nMistakes were made.",
         scores: {
-          openness: 1,
+          openness: 3,
           conscientiousness: 0,
-          extraversion: 1,
+          extraversion: 3,
           agreeableness: 0,
           neuroticism: 0,
         },
       },
       {
-        label: "Return to the cave to explore more",
+        label: "Return to the nearby cave to explore more",
         outcome: "scene14",
         scores: {
           openness: 0,

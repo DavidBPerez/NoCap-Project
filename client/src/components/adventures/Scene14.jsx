@@ -19,17 +19,19 @@ const Scene14 = (props) => {
     options: [
       {
         label: "Keep exploring deeper into the cave",
-        outcome: "scene14",
+        outcome: "gameOver",
+        gameOverMessage: 
+          "You get so far that you cannot see light anymore. You bump into something that might've not been very pleasant.\n\nYou perish.",
         scores: {
           openness: 0,
-          conscientiousness: 1,
-          extraversion: 1,
+          conscientiousness: 3,
+          extraversion: 3,
           agreeableness: 0,
           neuroticism: 0,
         },
       },
       {
-        label: "Return to the forest",
+        label: "Return back outside to the forest",
         outcome: "scene9",
         scores: {
           openness: 1,
@@ -40,7 +42,7 @@ const Scene14 = (props) => {
         },
       },
       {
-        label: "Knock on the door to see if anyone is inside",
+        label: "Return to a cabin you saw earlier and knock on the door to see if anyone is inside",
         outcome: "scene15",
         scores: {
           openness: 0,

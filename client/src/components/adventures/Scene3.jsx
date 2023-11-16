@@ -21,10 +21,10 @@ const Scene3 = (props) => {
         label: "Follow the path of colorful flowers",
         outcome: "scene9",
         scores: { 
-          openness: 1, 
+          openness: 2, 
           conscientiousness: 0,
           extraversion: 0,
-          agreeableness: 1,
+          agreeableness: 2,
           neuroticism: 0,
         },
       },
@@ -33,8 +33,8 @@ const Scene3 = (props) => {
         outcome: "scene10",
         scores: { 
           openness: 0,
-          conscientiousness: 1, 
-          extraversion: 1, 
+          conscientiousness: 2, 
+          extraversion: 2, 
           agreeableness: 0,
           neuroticism: 0,
         },
@@ -47,16 +47,16 @@ const Scene3 = (props) => {
           conscientiousness: 0,
           extraversion: 0,
           agreeableness: 0,
-          neuroticism: 1 
+          neuroticism: 2, 
         },
       },
       {
         label: "Wait and observe your surroundings",
         outcome: "scene12",
         scores: {
-          openness: 1,
+          openness: 2,
           conscientiousness: 0,
-          extraversion: 1,
+          extraversion: 2,
           agreeableness: 0,
           neuroticism: 0,
         },
