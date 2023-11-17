@@ -15,7 +15,7 @@ const Scene15 = (props) => {
   };
 
   const sceneData = {
-    text: "You decide to knock on the door to see if anyone is inside. After a few moments, the door creaks open, revealing a mysterious room. What will you do now?",
+    text: "You decide to knock on the door to see if anyone is inside. After a few moments, the door creaks open on its own, revealing a mysterious room. What will you do now?",
     options: [
       {
         label: "Enter the mysterious room",
@@ -33,7 +33,7 @@ const Scene15 = (props) => {
         outcome: "scene14",
         scores: {
           openness: 0,
-          conscientiousness: 1,
+          conscientiousness: 0, // 1
           extraversion: 0,
           agreeableness: 0,
           neuroticism: 0,

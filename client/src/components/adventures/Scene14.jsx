@@ -31,30 +31,32 @@ const Scene14 = (props) => {
         },
       },
       {
-        label: "Return back outside to the forest",
-        outcome: "scene9",
+        label: "Start making your way back outside",
+        outcome: "scene10",
         scores: {
-          openness: 1,
+          openness: 0, // 1
           conscientiousness: 0,
-          extraversion: 1,
+          extraversion: 0, // 1
           agreeableness: 0,
           neuroticism: 0,
         },
       },
       {
-        label: "Return to a cabin you saw earlier and knock on the door to see if anyone is inside",
+        label: "Return back to a cabin you saw earlier and see if anything is inside yet",
         outcome: "scene15",
         scores: {
           openness: 0,
           conscientiousness: 0,
           extraversion: 0,
           agreeableness: 0,
-          neuroticism: 1,
+          neuroticism: 0, // 1
         },
       },
       {
-        label: "Take a break and relax for a while",
-        outcome: "scene13",
+        label: "Take a breather and relax on a rock for a while",
+        outcome: "gameOver",
+        gameOverMessage: 
+          "As you go to push you weight on a nearby resting rock it collapses and you fall through an oddly inconvenient hole.\n\nWho put that there?",
         scores: {
           agreeableness: 0,
           openness: -1,

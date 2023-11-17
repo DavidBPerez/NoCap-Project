@@ -45,7 +45,9 @@ const Scene13 = (props) => {
       },
       {
         label: "Explore deeper into the forest",
-        outcome: "scene9",
+        outcome: "gameOver",
+        gameOverMessage: 
+          "You go further along your travels into the unknown.\n\nWho knows what awaits your future...",
         scores: {
           openness: 1,
           conscientiousness: 0,
@@ -55,7 +57,7 @@ const Scene13 = (props) => {
         },
       },
       {
-        label: "Open the door and enter the unknown room",
+        label: "Venture nearby and enter the unknown cave",
         outcome: "scene14",
         scores: {
           openness: 1,

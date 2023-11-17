@@ -15,7 +15,7 @@ const Scene10 = (props) => {
   };
 
   const sceneData = {
-    text: "You decide to explore the dark cave entrance. Inside, it's mysterious and eerie. What will you do now?",
+    text: "You make you way to the dark cave entrance. Inside, it's mysterious and eerie. What will you do now?",
     options: [
       {
         label: "Keep exploring deeper into the cave",

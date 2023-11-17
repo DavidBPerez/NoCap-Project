@@ -15,7 +15,7 @@ const Scene16 = (props) => {
   };
 
   const sceneData = {
-    text: "You enter the mysterious room, finding it to be a quiet and serene place. It's the perfect spot for meditation and contemplation. What's your next move?",
+    text: "You enter the mysterious room, finding it to be a quiet and serene place. It might the perfect spot for meditation and contemplation (if it didn't seem so unsettling). What's your next move?",
     options: [
       {
         label: "Sit and meditate, contemplating the choices of the road",
@@ -44,11 +44,13 @@ const Scene16 = (props) => {
         },
       },
       {
-        label: "Return to the nearby cave to explore more",
-        outcome: "scene14",
+        label: "Play cautiously and leave for the future journeys ahead",
+        outcome: "gameOver",
+        gameOverMessage: 
+          "You go further along your travels into the unknown.\n\nWho knows what awaits your future...",
         scores: {
           openness: 0,
-          conscientiousness: 1,
+          conscientiousness: 2,
           extraversion: 0,
           agreeableness: 0,
           neuroticism: 0,
@@ -56,7 +58,9 @@ const Scene16 = (props) => {
       },
       {
         label: "Take a break and relax for a while",
-        outcome: "scene13",
+        outcome: "gameOver",
+        gameOverMessage: 
+          "As lay back to rest you notice the ceiling is moving, and so are you.\n\nNever trust a fake house in the woods.",
         scores: {
           agreeableness: 0,
           openness: -1,

@@ -29,19 +29,19 @@ const Scene11 = (props) => {
         },
       },
       {
-        label: "Descend and continue exploring the forest",
+        label: "Descend back down and continue exploring the forest",
         outcome: "scene9",
         scores: {
-          openness: 1,
+          openness: 0, // 1
           conscientiousness: 0,
-          extraversion: 1,
+          extraversion: 0, // 1
           agreeableness: 0,
           neuroticism: 0,
         },
       },
       {
         label: "Use your vantage point to find points of interest",
-        outcome: "scene10",
+        outcome: "scene12",
         scores: {
           openness: 0,
           conscientiousness: 1,

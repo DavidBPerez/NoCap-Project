@@ -18,3 +18,5 @@ David Berthod-Perez, Added more scenes and GameOver results scene, 3.5hrs
 David Berthod-Perez, Modified character creation to affect personality score and finally fixed bug preventing personality score from actually changing, 5hrs
 Ethan Peeler, GPT-2 API Story Experimentation in useEffect(), 2.5hrs
 David Berthod-Perez, Fixed GameOver results and score scaling/calculation + modified restart & exit buttons for score management, 3hrs
+David Berthod-Perez, Adding more scene clarification/outcomes/story consistency, 3hrs
+Ethan Peeler, Firebase Authentication and Realtime Database, 3hrs
