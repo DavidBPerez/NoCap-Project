@@ -20,3 +20,5 @@ Ethan Peeler, GPT-2 API Story Experimentation in useEffect(), 2.5hrs
 David Berthod-Perez, Fixed GameOver results and score scaling/calculation + modified restart & exit buttons for score management, 3hrs
 David Berthod-Perez, Adding more scene clarification/outcomes/story consistency, 3hrs
 Ethan Peeler, Firebase Authentication and Realtime Database, 3hrs
+David Berthod-Perez, Attempted option fading and score troubleshooting: possible problem with displayed score vs actual score but attempted fixes were prone to causing more issues (will revisit at later date) but moving onto other tasks, 5hrs
+David Berthod-Perez, Added a skippable tutorial, 1hrs

@@ -1,15 +1,17 @@
-import React from 'react';
-import { useRecoilState, useRecoilValue } from 'recoil';
+import React, { useState } from 'react';
+import { useRecoilState } from 'recoil';
 import { gameStateState } from '../atoms/GameState';
 import PlayerStats from '../components/PlayerStats';
 import { PlayerStatsState, updatePlayerStats } from '../atoms/PlayerStatsState';
 import GameScene from '../components/GameScene';
 import GameMenu from '../components/GameMenu';
+import Tutorial from '../components/Tutorial';
 import './Css/GamePage.css';
 
 const GamePage = () => {
   const [gameState, setGameState] = useRecoilState(gameStateState);
   const [playerStats, setPlayerStats] = useRecoilState(PlayerStatsState);
+  const [tutorialCompleted, setTutorialCompleted] = useState(false);
 
   const handleOptionClick = (outcome, scores) => {
     console.log('Selected Scores:', scores);
@@ -32,6 +34,18 @@ const GamePage = () => {
     setGameState(updatedGameState);
   };
 
+  const handleTutorialComplete = () => {
+    setTutorialCompleted(true);
+  };
+
+  const handleSkipTutorial = () => {
+    setTutorialCompleted(true);
+    setGameState((prevGameState) => ({
+      ...prevGameState,
+      currentScene: 'scene1',
+    }));
+  };
+
   return (
     <div id="game-container" className="d-flex flex-column">
       <div className="header">
@@ -44,7 +58,11 @@ const GamePage = () => {
           </div>
           <div className="fancy-border" />
           <div id="game-scene" className="text-center">
-            <GameScene onOptionClick={handleOptionClick} />
+            {tutorialCompleted ? (
+              <GameScene onOptionClick={handleOptionClick} />
+            ) : (
+              <Tutorial onComplete={handleTutorialComplete} onSkip={handleSkipTutorial} />
+            )}
           </div>
           <div className="fancy-border" />
         </div>
