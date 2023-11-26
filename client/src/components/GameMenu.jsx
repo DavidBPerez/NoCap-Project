@@ -72,13 +72,13 @@ const GameMenu = () => {
   };
 
   const saveGame = () => {
-    const saveData = JSON.stringify(gameState);
-    saveDataToFile('/cache-data/localSaves.json', saveData);
-    setSaveMessage('Game Saved!');
+    const saveData = JSON.stringify({
+      ...gameState,
+      playerStats: { ...playerStats },
+    });
 
-    setTimeout(() => {
-      setSaveMessage('');
-    }, 1500);
+    saveDataToFile('/cache-data/localSaves.json', saveData);
+    window.alert('Game Saved!');
   };
 
   const loadGame = () => {
@@ -86,16 +86,20 @@ const GameMenu = () => {
 
     if (loadedData) {
       const loadedState = JSON.parse(loadedData);
-      setGameState(loadedState);
-      setPlayerStats(loadedState.playerStats);
-      setLoadMessage('Game Loaded');
-    } else {
-      setLoadMessage('No saved game found.');
-    }
 
-    setTimeout(() => {
-      setLoadMessage('');
-    }, 1500);
+      setGameState({
+        ...loadedState,
+        playerStats: {
+          ...playerStats,
+          ...loadedState.playerStats,
+        },
+      });
+
+      setPlayerStats(loadedState.playerStats);
+      window.alert('Game Loaded');
+    } else {
+      window.alert('No saved game found.');
+    }
   };
 
   return (
