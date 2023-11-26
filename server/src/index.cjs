@@ -13,7 +13,6 @@ const io = new Server(server);
 // TBD -- Enable CORS for requests from http://localhost:3000
 // app.use(cors({ origin: 'http://localhost:3000' }));
 
-// Serve static files
 app.use(express.static(path.resolve(__dirname, '../../client/dist')));
 
 const apiKey = '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';

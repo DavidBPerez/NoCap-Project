@@ -10,7 +10,7 @@ import './Css/GamePage.css';
 
 const GamePage = () => {
   const [gameState, setGameState] = useRecoilState(gameStateState);
-  const [playerStats, setPlayerStats] = useRecoilState(PlayerStatsState);
+  const [playerStats] = useRecoilState(PlayerStatsState);
   const [tutorialCompleted, setTutorialCompleted] = useState(false);
 
   const handleOptionClick = (outcome, scores) => {
