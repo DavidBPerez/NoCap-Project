@@ -2,22 +2,29 @@ import { BrowserRouter } from 'react-router-dom';
 import { RecoilRoot } from 'recoil';
 import { useEffect } from 'react';
 import { socket, connectToServer } from './controllers/SocketController.jsx';
-import {createUser, storeUserData} from "./firebase.mjs"
-
+import { auth } from "./firebase.mjs";
+import { onAuthStateChanged } from 'firebase/auth';
 import ProjectRouter from './ProjectRouter.jsx';
-import './App.css';
 
 export default function App() {
   useEffect(() => {
     connectToServer();
-    createUser("hi@hirerec.com", "hihihi") //TEST: REMOVE
-    storeUserData("hihihihihhi", "hi@hirecrec.com", "hithere", 25, "female");
+
+    const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
+      if (firebaseUser) {
+        console.log('User authenticated');
+      } else {
+        console.log('No user authenticated');
+      }
+    });
+
     return () => {
+      unsubscribe();
       socket.disconnect();
       console.log('Socket Closed');
     };
-  });
-  
+  }, []);
+
   return (
     <RecoilRoot>
       <BrowserRouter>
