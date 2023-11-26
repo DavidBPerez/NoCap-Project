@@ -14,8 +14,8 @@ export default function Header(props) {
         } else {
           console.log('User signed out successfully');
         }
-        // Redirect to login or homepage after sign out
-        // You can use the 'navigate' function or any other routing logic here
+        // May redirect to login or homepage after sign out
+        // Can use  'navigate' function or other routing logic
       })
       .catch((error) => {
         console.error('Sign-out error', error);

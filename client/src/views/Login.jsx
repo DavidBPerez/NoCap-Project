@@ -21,6 +21,7 @@ export default function LoginPage() {
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
+      console.log("Auth state changed:", firebaseUser);
       setIsLoading(false);
       if (firebaseUser) {
         setIsLoggedIn(true);
@@ -68,26 +69,29 @@ export default function LoginPage() {
   const submitHandler = async (values) => {
     try {
       if (isSignUp) {
+        // Sign up logic
         await createUser(values.email, values.password);
         await storeUserData(values.username + values.age, values.email, values.username, values.age, values.gender);
       } else {
+        // Attempt to sign in with email and password
         await signInWithEmailAndPassword(auth, values.email, values.password);
+
+        // Check if the user is authenticated
+        const user = auth.currentUser;
+        console.log("Current user after sign in attempt:", user);
+
+        if (user) {
+          console.log("Authentication successful for:", values.email);
+          navigate('/character_creation');
+        } else {
+          console.error("Authentication failed");
+        }
       }
-
-      console.log("Authentication successful for:", values.email);
-
-      setTimeout(() => {
-        onAuthStateChanged(auth, (firebaseUser) => {
-          if (firebaseUser) {
-            console.log('User authenticated, redirecting to /character_creation');
-            navigate('/character_creation');
-          }
-        });
-      }, 1000);
     } catch (error) {
       console.error("Authentication Error", error.code, error.message);
     }
   };
+
 
   const loginForm = isLoading ? (
     <p>Loading...</p>

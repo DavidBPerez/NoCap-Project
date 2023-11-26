@@ -5,7 +5,7 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
 } from "firebase/auth";
-import { getDatabase, ref, set } from "firebase/database";
+import { getDatabase, ref, set, get } from "firebase/database";
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -21,8 +21,6 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
-
-// Storing data
 const database = getDatabase(app);
 
 export function createUser(email, password) {
@@ -57,10 +55,30 @@ export function signInWithGoogle(navigate) {
   const provider = new GoogleAuthProvider();
 
   signInWithPopup(auth, provider)
-    .then((result) => {
+    .then(async (result) => {
       const user = result.user;
       console.log("Google Sign-In Success", user);
-      navigate('/character_creation'); // Redirect after successful sign-in
+
+      const userRef = ref(database, 'users/' + user.uid);
+      const userSnapshot = await get(userRef);
+
+      if (!userSnapshot.exists()) {
+        const userData = {
+          username: user.displayName,
+          email: user.email,
+          // Add additional fields as needed (age, gender, etc.)
+        };
+
+        set(userRef, userData)
+          .then(() => {
+            console.log("User data successfully stored in the database");
+          })
+          .catch((error) => {
+            console.error("Error storing user data in the database", error);
+          });
+      }
+
+      navigate('/character_creation');
     })
     .catch((error) => {
       const errorCode = error.code;
