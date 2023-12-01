@@ -1,3 +1,5 @@
+// Skeleton file --> Depreciated
+
 const http = require('http');
 const express = require('express');
 const { Server } = require('socket.io');
@@ -10,7 +12,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server);
 
-// TBD -- Enable CORS for requests from http://localhost:3000
+// TBD -- Enable CORS for requests from http://localhost:3000 (if needed)
 // app.use(cors({ origin: 'http://localhost:3000' }));
 
 app.use(express.static(path.resolve(__dirname, '../../client/dist')));
@@ -20,7 +22,7 @@ const model = 'EleutherAI/gpt-neo-2.7B';
 
 app.use(bodyParser.json());
 app.post("/generate/initial", async (req, res) => {
-  const stories = ["You are adventurous.", "You are conscientous.", "You are incredibly friendly", "You are a happy-go-lucky person.", "You are an emotional person."]; //change later to req.body.prompt
+  const stories = ["You are adventurous.", "You are conscientous.", "You are incredibly friendly", "You are a happy-go-lucky person.", "You are an emotional person."]; // Testing -- Change later to req.body.prompt
   try {
     const response = await axios.post(
       'https://api-inference.huggingface.co/models/gpt2-medium',

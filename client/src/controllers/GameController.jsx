@@ -1,3 +1,5 @@
+// Skeleton file --> Depreciated
+
 import { useEffect } from 'react';
 import { useRecoilState } from 'recoil';
 import { playerStatsState } from '../atoms/PlayerStatsState';
@@ -6,12 +8,12 @@ const GameController = () => {
   const [playerStats, setPlayerStats] = useRecoilState(playerStatsState);
 
   useEffect(() => {
-    const isGameActive = /* Implement logic to check if the game is active */;
+    const isGameActive = /* Implement logic to check game activity */;
 
     if (isGameActive) {
-      // Implement game logic here
+      // Implement game logic:
       // Update player stats based on scenarios
-      // Manage game progression, score calculation, etc.
+      // Manage progression, score calculation, etc.
     }
   }, [playerStats]);
 

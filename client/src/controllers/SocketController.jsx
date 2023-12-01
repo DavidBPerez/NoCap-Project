@@ -1,3 +1,5 @@
+// Skeleton file --> Depreciated
+
 import { io } from 'socket.io-client';
 import serverURL from '../config.js';
 

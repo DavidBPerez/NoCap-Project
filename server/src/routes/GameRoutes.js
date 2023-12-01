@@ -1,3 +1,5 @@
+// Skeleton file --> Depreciated
+
 const express = require('express');
 const GameController = require('../controllers/GameController');
 

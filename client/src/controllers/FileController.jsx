@@ -1,5 +1,3 @@
-// plan to include fs (maybe)
-
 export const saveDataToFile = (filePath, data) => {
   try {
     localStorage.setItem(filePath, data);

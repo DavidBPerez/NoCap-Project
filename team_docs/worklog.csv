@@ -23,3 +23,4 @@ Ethan Peeler, Firebase Authentication and Realtime Database, 3hrs
 David Berthod-Perez, Attempted option fading and score troubleshooting: possible problem with displayed score vs actual score but attempted fixes were prone to causing more issues (will revisit at later date) but moving onto other tasks, 5hrs
 David Berthod-Perez, Added a skippable tutorial, 1hrs
 David Berthod-Perez, Implemented google authentication and firebase login measures + db support, 6hrs
+David Berthod-Perez, Saving/loading fixes before db implementation, 1hrs

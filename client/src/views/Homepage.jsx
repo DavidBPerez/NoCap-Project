@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 
 import './Css/Homepage.css';
 
-// Home Nav Bar Displayed Elements
 const homeBarItems = [{ pagePath: "/about", imgDesc: "About Page", imgPath: "../../public/img/information.png" }];
 
 function HomePageFooter() {

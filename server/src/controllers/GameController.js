@@ -1,3 +1,5 @@
+// Skeleton file --> Depreciated
+
 const express = require('express');
 const router = express.Router();
 
@@ -7,19 +9,19 @@ let gameData = {
 };
 
 router.post('/start-game', (req, res) => {
-  // Implement logic to initialize game session here (if needed)
-  // Generate initial game state, store in server (or db), and send to client
+  // Implement logic to initialize session here (if needed)
+  // Generate initial game state, store in server/db, send client
   gameData = {
-    // Initialize game state props as needed
+    // Initialize game state props (as needed)
   };
 
-  // Handle player stats, scenarios, and game rules on server
+  // Handle player stats, scenarios, and game services on server
 
   res.json({ message: 'Game started' });
 });
 
 router.post('/exit-game', (req, res) => {
-  // Implement logic to handle exit, save , and clean up
+  // Implement logic to handle exit, save, and clean up
   
   gameData = {};
   res.json({ message: 'Game exited' });
