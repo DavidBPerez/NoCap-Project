@@ -1,10 +1,12 @@
 import React from 'react';
 import NavBar from './NavBar';
 import { getAuth, signOut } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom'; 
 
 export default function Header(props) {
   const { navOptions, isLoggedIn, isGoogleSignIn } = props;
   const auth = getAuth();
+  const navigate = useNavigate();
 
   const handleLogout = () => {
     signOut(auth)
@@ -14,8 +16,7 @@ export default function Header(props) {
         } else {
           console.log('User signed out successfully');
         }
-        // May redirect to login or homepage after sign out
-        // Can use  'navigate' function or other routing logic
+        navigate(isLoggedIn ? '/' : '/login');
       })
       .catch((error) => {
         console.error('Sign-out error', error);

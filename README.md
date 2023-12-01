@@ -11,23 +11,25 @@ Welcome to the NoCap Project, this is a test-based adventure game for personalit
   - Due to domain restrications Google (firebase) sign-in may not work due to domain restrictions. To circumvent, do either of the following:
     *  Use the normal sign-up or sign-in instead.
     *  Sign into a Replit account and try again (access may be granted from a NoCap member if it proves to be necessary).
+  - Default sign-in (not google) also has a recent unknown issue where the sign-in button produces not results, if this occurs just use the Google sign-in or sign-up.
   - As a firebase security feature, if signing up passwords may need to meet minimum complexity or length requirement. This may be the issue if your sign-up button does nothing.
 
 ## Project folder Structure
 - `client/`: React application code.
-  * `dist/`: Static react files.
-  * `public/`: Files/images cached by user and site.
-  * `src/`: Root for source code and React main.
+  - `dist/`: Static react files.
+  - `public/`: Files/images cached by user and site.
+  - `src/`: Root for source code and React main.
     * `atoms/`: Source code managing page/data states.
     * `cache_data/`: Potential location for local DB game saves.
     * `components/`: Source code for webpage logic and components.
+      * `adventures/`: Source code for handling adventure scenes.
     * `controllers/`: Source code handling logic external from the application.
     * `views/`: Source code for webpage loading and logic.
 - `server/`: Depreciated node server code (Unnecessary with replit hosting).
 - `clientDocs/`: Code worklogs.
 
 ## Client Setup (Optionally Provided)
-To build and run the React client:
+To build and run the React client (if on local machine):
 
 1. Navigate to the `cd client` directory.
 2. Install client dependencies using `npm install`.
@@ -36,7 +38,7 @@ To build and run the React client:
     - Use this command whenever changes are finished in the React code.
 
 ## Server Setup (Optionally Provided -!Potentially Depreciated!)
-To run the server, follow these steps:
+To run the server, follow these steps (if on local machine):
 
 1. Navigate to the `cd server` directory.
 2. Install server dependencies using `npm install`.
@@ -44,8 +46,8 @@ To run the server, follow these steps:
     - Run `npm run server`.
       * This will run the server logic (if any).
 
-## Running Both Client and Server Together
-For development, use the provided scripts:
+## Running Both Client and Server Together (Optionally Provided)
+For development, use the provided scripts (if on local machine):
 
 - `npm run build_both`: This command concurrently starts both the client and server during development.
   * Use this when you want to run the client and server together for development purposes.
@@ -64,6 +66,8 @@ Two bash scripts provided:
   * Create static directory and builds/runs app. Also handles `npm install`.
 
 ## Note
+- This app utilizes Firebase authentication/database API for users and Replit hosting.
 - Server has been depreciated since our application is both developed and hosted in Replit.
 - We have optionally provided methods to install and test/develop the code yourself on a local machine, but this is not recommended. If you do though be sure you have Node.js installed if building/running the project, and also run `npm install` to ensure all dependencies are met.
 - Building and running the project locally is untested and may produce either unstable or no results from the application code.
+ 
