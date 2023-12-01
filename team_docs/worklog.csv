@@ -24,3 +24,4 @@ David Berthod-Perez, Attempted option fading and score troubleshooting: possible
 David Berthod-Perez, Added a skippable tutorial, 1hrs
 David Berthod-Perez, Implemented google authentication and firebase login measures + db support, 6hrs
 David Berthod-Perez, Saving/loading fixes before db implementation, 1hrs
+David Berthod-Perez, Slight edge case adjustments, 0.5hrs
