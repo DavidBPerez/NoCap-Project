@@ -33,7 +33,7 @@ If you wish to test via replit:
     * `controllers/`: Source code handling logic external from the application.
     * `views/`: Source code for webpage loading and logic.
 - `server/`: Depreciated node server code (Unnecessary with replit hosting).
-- `clientDocs/`: Code worklogs.
+- `clientDocs/`: Code worklogs and project documentation/guides.
 
 ## Client Setup (Optionally Provided)
 To build and run the React client (if on local machine):
