@@ -3,7 +3,13 @@
 Welcome to the NoCap Project, this is a test-based adventure game for personality analysis. This README provides instructions for building and running the project. For the full and most optimized experience we recommended only following the instructions below and paying attention to the `Note` section at the bottom.
 
 ## Instructions to Run Application
-1. Look in the `About` section of the github repo page for the project.
+1. Click this link: [https://no-cap-project-ethanpeeler.replit.app/]
+2. Enjoy! Note:
+   * No download is required.
+   * Some notes in the below instructions may apply.
+
+If you wish to test via replit:
+1. In the `About` section of the github repo page for the project.
 2. Click the link to go to the Replit page.
 3. Click the big green or blue `Start` button and wait for the application to load.
 4. Have fun! Note:
