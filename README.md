@@ -3,8 +3,9 @@
 Welcome to the NoCap Project, this is a test-based adventure game for personality analysis. This README provides instructions for building and running the project. For the full and most optimized experience we recommended only following the instructions below and paying attention to the `Note` section at the bottom.
 
 ## Instructions to Run Application
-1. Click this link: [https://no-cap-project-ethanpeeler.replit.app/]
-2. Enjoy! Note:
+1. Open the `No-Cap Manual` guide provided for additional tips.
+2. Click this link: [https://no-cap-project-ethanpeeler.replit.app/]
+3. Enjoy! Note:
    * No download is required.
    * Some notes in the below instructions may apply.
 
